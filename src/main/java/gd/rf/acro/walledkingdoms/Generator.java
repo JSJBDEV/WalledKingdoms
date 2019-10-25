@@ -10,6 +10,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import static gd.rf.acro.walledkingdoms.Layout.Layout.genLayoutFromSeed;
+import static gd.rf.acro.walledkingdoms.Layout.Layout.pickBuildingFromStyle;
 import static gd.rf.acro.walledkingdoms.Utils.writeLines;
 import static gd.rf.acro.walledkingdoms.Politics.Politics.genImportantInformation;
 
@@ -26,7 +27,7 @@ public class Generator {
             {
 
                 //create necessary information and descriptions
-                List<String> politics = genImportantInformation();
+                List<String> politics = genImportantInformation(world);
                 writeLines(politics, pref + "politics.wk");
 
                 //create the building layout
@@ -41,6 +42,10 @@ public class Generator {
     @SubscribeEvent
     public static void makeCity(ChunkEvent.Load event)
     {
+        int x = event.getChunk().getPos().getXStart();
+        int z = event.getChunk().getPos().getZStart();
+
+
 
     }
 }
