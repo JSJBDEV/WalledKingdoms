@@ -11,8 +11,9 @@ public class Politics {
     {
         List<String> info = new ArrayList<>();
         info.add("Republic of"); //Government type
-        info.add(genName(9)); //kingdom name
+        info.add(genName(4)); //kingdom name
         info.add("0"); //cultural style
+        info.add(RandomUtils.nextInt(-10000,10001)+","+RandomUtils.nextInt(-10000,10001)+","+RandomUtils.nextInt(-10000,10001));
 
 
         return info;

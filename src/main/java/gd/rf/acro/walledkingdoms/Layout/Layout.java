@@ -13,10 +13,10 @@ public class Layout {
         long seed = world.getSeed();
         List<String> csvLayout = new ArrayList<>();
 
-        for (int i = 1; i<length; i++)
+        for (int i = 0; i<length; i++)
         {
             String row = "";
-            for (int j = 1; j<length; j++)
+            for (int j = 0; j<length; j++)
             {
                 row=row+pickBuildingFromStyle(style)+",";
             }
