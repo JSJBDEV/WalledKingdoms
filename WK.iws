@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e70fd4fd-6ce7-4bc3-9cff-ee7b85e694df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/WK.iws" beforeDir="false" afterPath="$PROJECT_DIR$/WK.iws" afterDir="false" />
-    </list>
+    <list default="true" id="e70fd4fd-6ce7-4bc3-9cff-ee7b85e694df" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,13 +209,21 @@
       <option name="project" value="LOCAL" />
       <updated>1571951184658</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="started Citizen class">
+      <created>1571951460157</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1571951460157</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <MESSAGE value="initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+    <MESSAGE value="started Citizen class" />
+    <option name="LAST_COMMIT_MESSAGE" value="started Citizen class" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

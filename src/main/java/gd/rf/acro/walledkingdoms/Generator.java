@@ -39,13 +39,8 @@ public class Generator {
 
     }
 
-    @SubscribeEvent
-    public static void makeCity(ChunkEvent.Load event)
+    public static void createKingdom()
     {
-        int x = event.getChunk().getPos().getXStart();
-        int z = event.getChunk().getPos().getZStart();
-
-
 
     }
 }
