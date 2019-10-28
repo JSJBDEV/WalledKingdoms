@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e70fd4fd-6ce7-4bc3-9cff-ee7b85e694df" name="Default Changelist" comment="" />
+    <list default="true" id="e70fd4fd-6ce7-4bc3-9cff-ee7b85e694df" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/WK.iws" beforeDir="false" afterPath="$PROJECT_DIR$/WK.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Politics/Politics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Politics/Politics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Utils.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,14 +221,35 @@
       <option name="project" value="LOCAL" />
       <updated>1571951460157</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="switched to an item based kingdom generation">
+      <created>1572122003845</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1572122003845</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <MESSAGE value="initial" />
     <MESSAGE value="started Citizen class" />
-    <option name="LAST_COMMIT_MESSAGE" value="started Citizen class" />
+    <MESSAGE value="switched to an item based kingdom generation" />
+    <option name="LAST_COMMIT_MESSAGE" value="switched to an item based kingdom generation" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

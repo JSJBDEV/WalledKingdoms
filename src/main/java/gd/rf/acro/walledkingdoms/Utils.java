@@ -149,4 +149,15 @@ public class Utils {
         
     }
 
+    public static List<String> readLines(String path)
+    {
+        try {
+            return Files.readAllLines(Paths.get(path));
+        }catch (Exception e)
+        {
+            System.out.println("Exception thrown when reading files: "+e);
+        }
+        return null;
+    }
+
 }
