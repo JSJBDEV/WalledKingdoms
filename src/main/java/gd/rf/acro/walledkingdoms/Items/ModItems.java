@@ -9,14 +9,17 @@ import net.minecraftforge.registries.IForgeRegistry;
  */
 public class ModItems {
     public static ItemBase mineCharm = new ItemBase("mine_charm").setCreativeTab(WalledKingdoms.tab);
+    public static StoryBook story = new StoryBook("story").setCreativeTab(WalledKingdoms.tab);
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
-            mineCharm
+            mineCharm,story
+
 
         );
     }
 
     public static void registerModels() {
         mineCharm.registerItemModel();
+        story.registerItemModel();
     }
 }

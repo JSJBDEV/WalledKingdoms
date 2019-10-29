@@ -14,8 +14,8 @@ public class Politics {
         info.add("Republic of"); //Government type
         info.add(genName(4)); //kingdom name
         info.add("0"); //cultural style
-        info.add(""+RandomUtils.nextInt(-10000,10001)); //x
-        info.add(""+RandomUtils.nextInt(-10000,10001)); //z
+        info.add(""+(RandomUtils.nextInt(0,20001)-10000)); //x
+        info.add(""+(RandomUtils.nextInt(0,20001)-10000)); //z
 
 
         return info;
