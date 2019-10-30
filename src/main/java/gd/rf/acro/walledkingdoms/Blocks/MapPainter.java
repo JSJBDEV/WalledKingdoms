@@ -38,7 +38,6 @@ public class MapPainter extends BlockBase {
             player.setHeldItem(hand,new ItemStack(map));
 
         }
-
         return super.onBlockActivated(world, pos, state, player, hand, p_onBlockActivated_6_, p_onBlockActivated_7_, p_onBlockActivated_8_, p_onBlockActivated_9_);
     }
 

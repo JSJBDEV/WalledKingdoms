@@ -2,7 +2,11 @@ package gd.rf.acro.walledkingdoms;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.entity.projectile.EntityTippedArrow;
 import net.minecraft.item.ItemMap;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
@@ -11,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
@@ -159,6 +164,16 @@ public class Utils {
             System.out.println("Exception thrown when reading files: "+e);
         }
         return null;
+    }
+
+    public static void makeRangedAttack(EntityLivingBase attacker)
+    {
+        //so this is the simplest possible way to implement ranged attacks I guess.
+        EntityArrow arrow = new EntityTippedArrow(attacker.world,attacker);
+        Vec3d lookdir = attacker.getLookVec();
+        arrow.setVelocity(lookdir.x*3,lookdir.y*3,lookdir.z*3);
+        arrow.setDamage(5);
+        attacker.world.spawnEntity(arrow);
     }
 
 
