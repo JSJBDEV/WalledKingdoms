@@ -3,5 +3,6 @@
 tile.stone_brick.name=Bricks Of Stone
 
 item.mine_charm.name=True Adventurers Charm
+item.story.item=Story Book
 
 itemGroup.walledkingdoms=Walled Kingdoms

@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e70fd4fd-6ce7-4bc3-9cff-ee7b85e694df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/models/item/story.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/structures/a.nbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/structures/b.nbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/structures/c.nbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/structures/d.nbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/textures/items/story.png" afterDir="false" />
+    <list default="true" id="e70fd4fd-6ce7-4bc3-9cff-ee7b85e694df" name="Default Changelist" comment="City generation works, added a way to spawn kingdoms, using a book, it either tells you about the kingdom or it creates it (when it is created, the book is removed)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/EntityCitizen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/ModEntities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/RenderCitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WK.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/WK.ipr" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WK.iws" beforeDir="false" afterPath="$PROJECT_DIR$/WK.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Blocks/MapPainter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Blocks/MapPainter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WK/assets/walledkingdoms/lang/en_us.lang" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/assets/walledkingdoms/lang/en_us.lang" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Generator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Items/ModItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Items/ModItems.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Layout/Layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Layout/Layout.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/WalledKingdoms$RegistrationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/WalledKingdoms$RegistrationHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/WalledKingdoms.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/WalledKingdoms.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/proxy/ClientProxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/proxy/ClientProxy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/proxy/CommonProxy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/proxy/CommonProxy.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/splash.properties" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/splash.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2019-10-24-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2019-10-24-1.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2019-10-24-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2019-10-24-2.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2019-10-24-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2019-10-24-3.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2019-10-24-4.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2019-10-24-4.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2019-10-24-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2019-10-24-5.log.gz" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/logs/2019-10-24-6.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2019-10-24-6.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-1.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-2.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-3.log.gz" afterDir="false" />
@@ -28,60 +23,15 @@
       <change beforePath="$PROJECT_DIR$/run/logs/debug-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-5.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/DIM-1/data/capabilities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/DIM-1/data/villages_nether.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/DIM-1/forcedchunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/DIM1/data/capabilities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/DIM1/data/villages_end.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/DIM1/forcedchunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/advancements/0ef55c79-9bc5-371f-96a7-29e4485d0c04.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/advancements/7a3400be-e31a-307d-9fe4-43aac536397b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/advancements/83a58a2f-438a-3130-bffe-4ef9d05cc839.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/advancements/8ab72cec-6ca5-3cfa-9749-08323debf842.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/advancements/9e4b41fd-b698-3086-96f0-585499a2673a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/advancements/cf6fbb5f-ecf0-3695-8c0e-427c205e2096.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/advancements/eed40018-eacf-3358-87a4-2d80ad7eb0d1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/data/Village.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/data/capabilities.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/data/idcounts.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/data/map_0.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/data/villages.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/forcedchunks.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/level.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/level.dat_old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/playerdata/0ef55c79-9bc5-371f-96a7-29e4485d0c04.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/playerdata/7a3400be-e31a-307d-9fe4-43aac536397b.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/playerdata/83a58a2f-438a-3130-bffe-4ef9d05cc839.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/playerdata/8ab72cec-6ca5-3cfa-9749-08323debf842.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/playerdata/9e4b41fd-b698-3086-96f0-585499a2673a.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/playerdata/cf6fbb5f-ecf0-3695-8c0e-427c205e2096.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/playerdata/eed40018-eacf-3358-87a4-2d80ad7eb0d1.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/region/r.-1.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/region/r.-1.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/region/r.-1.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/region/r.-1.2.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/region/r.-1.3.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/region/r.-2.2.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/region/r.0.-1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/region/r.0.0.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/region/r.0.1.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/region/r.0.2.mca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/session.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/stats/0ef55c79-9bc5-371f-96a7-29e4485d0c04.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/stats/7a3400be-e31a-307d-9fe4-43aac536397b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/stats/83a58a2f-438a-3130-bffe-4ef9d05cc839.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/stats/8ab72cec-6ca5-3cfa-9749-08323debf842.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/stats/9e4b41fd-b698-3086-96f0-585499a2673a.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/stats/cf6fbb5f-ecf0-3695-8c0e-427c205e2096.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New Worldhttr/stats/eed40018-eacf-3358-87a4-2d80ad7eb0d1.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usernamecache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usernamecache.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Items/ModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Items/ModItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Items/StoryBook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Items/StoryBook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Politics/Politics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Politics/Politics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Layout/Layout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Layout/Layout.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/WalledKingdoms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/WalledKingdoms.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/proxy/ClientProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/proxy/ClientProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/proxy/CommonProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/proxy/CommonProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/lang/en_us.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/lang/en_us.lang" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -311,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572304602662</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="City generation works, added a way to spawn kingdoms, using a book, it either tells you about the kingdom or it creates it (when it is created, the book is removed)">
+      <created>1572308963894</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572308963894</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -333,7 +290,8 @@
     <MESSAGE value="started Citizen class" />
     <MESSAGE value="switched to an item based kingdom generation" />
     <MESSAGE value="added city generation" />
-    <option name="LAST_COMMIT_MESSAGE" value="added city generation" />
+    <MESSAGE value="City generation works, added a way to spawn kingdoms, using a book, it either tells you about the kingdom or it creates it (when it is created, the book is removed)" />
+    <option name="LAST_COMMIT_MESSAGE" value="City generation works, added a way to spawn kingdoms, using a book, it either tells you about the kingdom or it creates it (when it is created, the book is removed)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

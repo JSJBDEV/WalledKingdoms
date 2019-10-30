@@ -112,7 +112,7 @@ public class Utils {
 
         for (int i = 0; i < image.getWidth(); i++) {
             for (int j = 0; j < image.getHeight(); j++) {
-                bytes.add(closestMapColour(image.getRGB(i,j)));
+                bytes.add(closestMapColour(image.getRGB(j,i)));
 
             }
         }

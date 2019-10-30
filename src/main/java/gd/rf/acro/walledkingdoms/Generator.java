@@ -1,13 +1,20 @@
 package gd.rf.acro.walledkingdoms;
 
+import gd.rf.acro.walledkingdoms.Citizens.EntityCitizen;
+import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.scoreboard.ScoreCriteria;
 import net.minecraft.scoreboard.Scoreboard;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.ChunkEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import scala.Int;
 import scala.collection.$colon$plus;
 
@@ -67,5 +74,14 @@ public class Generator {
         }
 
 
+    }
+
+    @SubscribeEvent
+    public static void entityRegistration(RegistryEvent.Register<EntityEntry> event) {
+        event.getRegistry().register(EntityEntryBuilder.create().entity(EntityCitizen.class)
+                .id(new ResourceLocation("citizens", "citizen"), 33).name("citizen").tracker(160, 2, false)
+                .egg(0x4c3e30, 0xf0f0f)
+                .spawn(EnumCreatureType.AMBIENT, 10, 8, 8, ForgeRegistries.BIOMES.getValuesCollection()).build());
+        System.out.println("Entries registered");
     }
 }

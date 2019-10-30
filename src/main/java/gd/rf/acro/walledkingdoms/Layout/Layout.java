@@ -32,7 +32,7 @@ public class Layout {
         switch (style)
         {
             case 0:
-                return europe[RandomUtils.nextInt(0,europe.length-1)];
+                return europe[RandomUtils.nextInt(0,europe.length)];
 
 
         }
