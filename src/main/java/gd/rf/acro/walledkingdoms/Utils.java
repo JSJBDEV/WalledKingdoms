@@ -24,6 +24,7 @@ import net.minecraft.world.gen.structure.template.TemplateManager;
 import net.minecraft.world.storage.MapData;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.RandomUtils;
 import scala.actors.threadpool.Arrays;
 
 import javax.imageio.ImageIO;

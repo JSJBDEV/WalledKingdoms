@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e70fd4fd-6ce7-4bc3-9cff-ee7b85e694df" name="Default Changelist" comment="City generation works, added a way to spawn kingdoms, using a book, it either tells you about the kingdom or it creates it (when it is created, the book is removed)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/EntityAICitizenAttack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/EntityAICitizenRangedAttack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Items/ItemBow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WK.iws" beforeDir="false" afterPath="$PROJECT_DIR$/WK.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/WK/assets/walledkingdoms/lang/en_us.lang" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/assets/walledkingdoms/lang/en_us.lang" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Blocks/MapPainter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Blocks/MapPainter.class" afterDir="false" />
@@ -26,12 +23,7 @@
       <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usernamecache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usernamecache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Blocks/MapPainter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Blocks/MapPainter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/Citizens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/Citizens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/EntityCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/EntityCitizen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/ModEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/ModEntities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/RenderCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/RenderCitizen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Items/ModItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Items/ModItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Generator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Utils.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -283,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572399123905</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="citizen now uses player model and can be Melee or Ranged">
+      <created>1572467796883</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572467796883</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,7 +307,8 @@
     <MESSAGE value="City generation works, added a way to spawn kingdoms, using a book, it either tells you about the kingdom or it creates it (when it is created, the book is removed)" />
     <MESSAGE value="Started work on the citizens" />
     <MESSAGE value="added test skin" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test skin" />
+    <MESSAGE value="citizen now uses player model and can be Melee or Ranged" />
+    <option name="LAST_COMMIT_MESSAGE" value="citizen now uses player model and can be Melee or Ranged" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

@@ -75,13 +75,4 @@ public class Generator {
 
 
     }
-
-    @SubscribeEvent
-    public static void entityRegistration(RegistryEvent.Register<EntityEntry> event) {
-        event.getRegistry().register(EntityEntryBuilder.create().entity(EntityCitizen.class)
-                .id(new ResourceLocation("citizens", "citizen"), 33).name("citizen").tracker(160, 2, false)
-                .egg(0x4c3e30, 0xf0f0f)
-                .spawn(EnumCreatureType.AMBIENT, 10, 8, 8, ForgeRegistries.BIOMES.getValuesCollection()).build());
-        System.out.println("Entries registered");
-    }
 }
