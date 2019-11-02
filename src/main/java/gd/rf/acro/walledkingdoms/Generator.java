@@ -8,6 +8,7 @@ import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.world.ChunkEvent;
 import net.minecraftforge.event.world.WorldEvent;
@@ -35,7 +36,8 @@ public class Generator {
         World world = event.getWorld();
         for (int i = 0; i < 1; i++)
         {
-            String pref = "saves/" + world.getWorldInfo().getWorldName() + "/WalledKingdoms/"+i+"/";
+            //String pref = "saves/" + world.getWorldInfo().getWorldName() + "/WalledKingdoms/"+i+"/";
+            String pref = DimensionManager.getCurrentSaveRootDirectory() + "/WalledKingdoms/"+i+"/";
             if(!Files.exists(Paths.get(pref+"politics.wk")))
             {
                 //create a universal scoreboard to identify what the next storybook should create
@@ -58,7 +60,8 @@ public class Generator {
 
     public static void createKingdom(World world, int kingdomNo, EntityPlayer reference)
     {
-        String pref = "saves/" + world.getWorldInfo().getWorldName() + "/WalledKingdoms/"+kingdomNo+"/";
+        //String pref = "saves/" + world.getWorldInfo().getWorldName() + "/WalledKingdoms/"+kingdomNo+"/";
+        String pref = DimensionManager.getCurrentSaveRootDirectory() + "/WalledKingdoms/"+kingdomNo+"/";
         List<String> politics = readLines(pref+"politics.wk");
         int x = Integer.parseInt(politics.get(3));
         int z = Integer.parseInt(politics.get(4));

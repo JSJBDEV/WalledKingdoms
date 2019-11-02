@@ -10,6 +10,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
+import net.minecraftforge.common.DimensionManager;
 
 import java.util.List;
 
@@ -39,7 +40,7 @@ public class StoryBook extends ItemBase {
                 player.getHeldItem(hand).setTagCompound(tags);
             }
 
-            String pref = "saves/" + world.getWorldInfo().getWorldName() + "/WalledKingdoms/" + player.getHeldItem(hand).getTagCompound().getInteger("kingdom") + "/";
+            String pref = DimensionManager.getCurrentSaveRootDirectory() + "/WalledKingdoms/" + player.getHeldItem(hand).getTagCompound().getInteger("kingdom") + "/";
             List<String> info = readLines(pref + "politics.wk");
 
             if (player.getDistanceSq(Integer.parseInt(info.get(3)), player.posY, Integer.parseInt(info.get(4))) < 50) {
