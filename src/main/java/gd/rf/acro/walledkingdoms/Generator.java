@@ -60,7 +60,6 @@ public class Generator {
 
     public static void createKingdom(World world, int kingdomNo, EntityPlayer reference)
     {
-        //String pref = "saves/" + world.getWorldInfo().getWorldName() + "/WalledKingdoms/"+kingdomNo+"/";
         String pref = DimensionManager.getCurrentSaveRootDirectory() + "/WalledKingdoms/"+kingdomNo+"/";
         List<String> politics = readLines(pref+"politics.wk");
         int x = Integer.parseInt(politics.get(3));
