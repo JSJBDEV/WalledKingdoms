@@ -49,7 +49,7 @@ public class EntityCitizen extends EntityMob implements IRangedAttackMob {
     protected void initEntityAI() {
         this.tasks.addTask(0, new EntityAISwimming(this));
         //this.tasks.addTask(2, new EntityAICitizenAttack(this, 1.0D, false));
-        this.tasks.addTask(3,new EntityAIAttackRanged(this,1.0D,5,50));
+        this.tasks.addTask(3,new EntityAIAttackRanged(this,1.0D,10,50));
         this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWander(this, 1.0D));
         this.tasks.addTask(8, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
@@ -66,7 +66,7 @@ public class EntityCitizen extends EntityMob implements IRangedAttackMob {
 
     @Override
     public void attackEntityWithRangedAttack(EntityLivingBase entityLivingBase, float v) {
-        Utils.makeRangedAttack(this);
+        Utils.makeRangedAttack(this,entityLivingBase);
     }
 
     @Override
