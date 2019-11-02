@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Generator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Items/ModItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Items/ModItems.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Layout/Layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Layout/Layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Tab.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Tab.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/Utils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/WalledKingdoms$RegistrationHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/WalledKingdoms$RegistrationHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/WalledKingdoms.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/WK/gd/rf/acro/walledkingdoms/WalledKingdoms.class" afterDir="false" />
@@ -23,8 +24,13 @@
       <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usernamecache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usernamecache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/EntityAICitizenRangedAttack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/EntityCitizen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Citizens/EntityCitizen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Politics/Politics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Politics/Politics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Tab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Tab.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gd/rf/acro/walledkingdoms/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/lang/en_us.lang" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/lang/en_us.lang" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/textures/entity/citizen.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/walledkingdoms/textures/entity/citizen.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,6 +136,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FibonacciNim" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FibonacciNim" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Minecraft Client" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="GradleStart" />
       <module name="WK" />
@@ -213,7 +227,13 @@
     <list>
       <item itemvalue="Application.Minecraft Client" />
       <item itemvalue="Application.Minecraft Server" />
+      <item itemvalue="Application.FibonacciNim" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FibonacciNim" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -282,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572467796883</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="updated some values, removed the old entity">
+      <created>1572536773993</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1572536773993</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,7 +335,8 @@
     <MESSAGE value="Started work on the citizens" />
     <MESSAGE value="added test skin" />
     <MESSAGE value="citizen now uses player model and can be Melee or Ranged" />
-    <option name="LAST_COMMIT_MESSAGE" value="citizen now uses player model and can be Melee or Ranged" />
+    <MESSAGE value="updated some values, removed the old entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated some values, removed the old entity" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
 </project>

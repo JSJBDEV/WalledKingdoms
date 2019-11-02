@@ -1,5 +1,7 @@
 package gd.rf.acro.walledkingdoms;
 
+import gd.rf.acro.walledkingdoms.Blocks.ModBlocks;
+import gd.rf.acro.walledkingdoms.Items.ModItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -14,6 +16,6 @@ public class Tab extends CreativeTabs {
 
     @Override
     public ItemStack getTabIconItem() {
-        return new ItemStack(Blocks.STONE_BRICK_STAIRS);
+        return new ItemStack(ModItems.story);
     }
 }

@@ -15,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
@@ -167,13 +168,27 @@ public class Utils {
         return null;
     }
 
+    //inspired by Ancient Warfare 2, but as you can see, almost completely different
     public static void makeRangedAttack(EntityLivingBase attacker)
     {
         //so this is the simplest possible way to implement ranged attacks I guess.
         EntityArrow arrow = new EntityTippedArrow(attacker.world,attacker);
         Vec3d lookdir = attacker.getLookVec();
-        arrow.setVelocity(lookdir.x*3,lookdir.y*3,lookdir.z*3);
+        arrow.setVelocity(lookdir.x*3,lookdir.y*3,lookdir.z);
         arrow.setDamage(5);
+        attacker.world.spawnEntity(arrow);
+    }
+
+    public static void makeRangedAttack(EntityLivingBase attacker,EntityLivingBase target)
+    {
+        //maths, specifically unit vectors
+        EntityArrow arrow = new EntityTippedArrow(attacker.world,attacker);
+
+        BlockPos dir = target.getPosition().subtract(attacker.getPosition());
+        Vec3d lookdir = new Vec3d(dir.getX(),dir.getY(),dir.getZ()).normalize();
+
+        arrow.setVelocity(lookdir.x*2,lookdir.y*2,lookdir.z*2);
+        arrow.setDamage(RandomUtils.nextInt(0,5));
         attacker.world.spawnEntity(arrow);
     }
 
