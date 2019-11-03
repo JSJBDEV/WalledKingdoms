@@ -4,6 +4,6 @@ tile.stone_brick.name=Bricks Of Stone
 tile.painter.name=Penguin Painter
 
 item.mine_charm.name=True Adventurers Charm
-item.story.item=Story Book
+item.story.name=Story Book
 
 itemGroup.walledkingdoms=Walled Kingdoms

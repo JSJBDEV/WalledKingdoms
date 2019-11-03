@@ -1,6 +1,8 @@
 package gd.rf.acro.walledkingdoms.Politics;
 
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomePlains;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.util.ArrayList;
@@ -15,8 +17,22 @@ public class Politics {
         info.add("Republic of"); //Government type
         info.add(genName(4)); //kingdom name
         info.add("0"); //cultural style
-        info.add(""+(RandomUtils.nextInt(0,20001)-10000)); //x
-        info.add(""+(RandomUtils.nextInt(0,20001)-10000)); //z
+
+        boolean isAcceptableBiome = false;
+        int x=0;
+        int z=0;
+        while (!isAcceptableBiome)
+        {
+            x = RandomUtils.nextInt(0,20001)-10000;
+            z = RandomUtils.nextInt(0,20001)-10000;
+            if(world.getBiome(new BlockPos(x,100,z)) instanceof BiomePlains)
+            {
+                isAcceptableBiome = true;
+            }
+        }
+        info.add(""+x);
+        info.add(""+z);
+
 
 
         return info;
@@ -30,6 +46,7 @@ public class Politics {
         for (int i = 0; i < length; i++)
         {
             name = name + consonants[RandomUtils.nextInt(0,consonants.length-1)];
+            if(i==0){name=name.toUpperCase();}
             name = name + vowels[RandomUtils.nextInt(0,vowels.length-1)];
 
         }

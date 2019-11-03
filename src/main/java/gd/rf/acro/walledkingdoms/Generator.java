@@ -64,8 +64,11 @@ public class Generator {
         List<String> politics = readLines(pref+"politics.wk");
         int x = Integer.parseInt(politics.get(3));
         int z = Integer.parseInt(politics.get(4));
-        int y = world.getHeight(x,z);
+        int y = world.getHeight(x,z)-5;
         BlockPos base = new BlockPos(x,y,z);
+
+
+
 
         List<String> layout = readLines(pref+"layout.wk");
         for (int i = 0; i < layout.size(); i++) {
