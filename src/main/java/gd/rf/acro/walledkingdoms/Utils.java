@@ -187,7 +187,7 @@ public class Utils {
         BlockPos dir = target.getPosition().subtract(attacker.getPosition());
         Vec3d lookdir = new Vec3d(dir.getX(),dir.getY(),dir.getZ()).normalize();
 
-        arrow.setVelocity(lookdir.x*2,lookdir.y*2,lookdir.z*2);
+        arrow.setVelocity(lookdir.x*2,lookdir.y*2+0.05,lookdir.z*2);
         arrow.setDamage(RandomUtils.nextInt(0,5));
         attacker.world.spawnEntity(arrow);
     }

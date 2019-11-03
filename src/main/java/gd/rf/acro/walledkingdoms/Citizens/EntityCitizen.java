@@ -70,19 +70,19 @@ public class EntityCitizen extends EntityMob implements IRangedAttackMob {
 
     @Override
     //Old Version
-    /**public void attackEntityWithRangedAttack(EntityLivingBase entityLivingBase, float v) {
+    public void attackEntityWithRangedAttack(EntityLivingBase entityLivingBase, float v) {
         Utils.makeRangedAttack(this,entityLivingBase);
-    }*/
+    }
 
     //From AbstractSkeleton
-    public void attackEntityWithRangedAttack(EntityLivingBase target, float distanceFactor)
+    /**public void attackEntityWithRangedAttack(EntityLivingBase target, float distanceFactor)
     {
         EntityArrow entityarrow = this.getArrow(distanceFactor);
         double d0 = target.posX - this.posX;
         double d1 = target.getEntityBoundingBox().minY + (double)(target.height / 3.0F) - entityarrow.posY;
         double d2 = target.posZ - this.posZ;
         double d3 = (double) MathHelper.sqrt(d0 * d0 + d2 * d2);
-        entityarrow.shoot(d0, d1 + d3 * 0.20000000298023224D, d2, 1.6F, (float)(14 - this.world.getDifficulty().getDifficultyId() * 4));
+        entityarrow.shoot(d0, d1 + d3 * 0.20000000298023224D, d2, 1.6F, (float)(14 - this.world.getDifficulty().getDifficultyId() * 6));
         this.playSound(SoundEvents.ENTITY_SKELETON_SHOOT, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
         this.world.spawnEntity(entityarrow);
     }
@@ -91,7 +91,7 @@ public class EntityCitizen extends EntityMob implements IRangedAttackMob {
         EntityTippedArrow entitytippedarrow = new EntityTippedArrow(this.world, this);
         entitytippedarrow.setEnchantmentEffectsFromEntity(this, p_190726_1_);
         return entitytippedarrow;
-    }
+    }*/
 
     @Override
     public void setSwingingArms(boolean b) {
