@@ -2,7 +2,10 @@ package gd.rf.acro.walledkingdoms.Politics;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeDesert;
 import net.minecraft.world.biome.BiomePlains;
+import net.minecraft.world.biome.BiomeSavanna;
+import net.minecraft.world.biome.BiomeSnow;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.util.ArrayList;
@@ -25,7 +28,7 @@ public class Politics {
         {
             x = RandomUtils.nextInt(0,20001)-10000;
             z = RandomUtils.nextInt(0,20001)-10000;
-            if(world.getBiome(new BlockPos(x,100,z)) instanceof BiomePlains)
+            if(world.getBiome(new BlockPos(x,100,z)) instanceof BiomePlains || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeDesert || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeSavanna || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeSnow)
             {
                 isAcceptableBiome = true;
             }
