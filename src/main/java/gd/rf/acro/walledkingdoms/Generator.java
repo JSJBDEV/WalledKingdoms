@@ -5,7 +5,9 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.scoreboard.ScoreCriteria;
 import net.minecraft.scoreboard.Scoreboard;
+import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
@@ -16,6 +18,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import org.apache.commons.lang3.RandomUtils;
 import scala.Int;
 import scala.collection.$colon$plus;
 
@@ -23,8 +26,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-import static gd.rf.acro.walledkingdoms.Layout.Layout.genLayoutFromSeed;
-import static gd.rf.acro.walledkingdoms.Layout.Layout.pickBuildingFromStyle;
+import static gd.rf.acro.walledkingdoms.Layout.Layout.*;
 import static gd.rf.acro.walledkingdoms.Politics.Politics.genImportantInformation;
 import static gd.rf.acro.walledkingdoms.Utils.*;
 
@@ -51,6 +53,7 @@ public class Generator {
 
                 //create the building layout
                 List<String> layout = genLayoutFromSeed(world, 32, Integer.parseInt(politics.get(2)));
+                layout = makeCityCoherent(layout,Integer.parseInt(politics.get(2)),32);
                 writeLines(layout, pref + "layout.wk");
             }
         }
@@ -74,10 +77,20 @@ public class Generator {
         for (int i = 0; i < layout.size(); i++) {
             String[] buildings = layout.get(i).split(",");
             for (int j = 0; j < buildings.length; j++) {
-                loadStructure(base.add(16*i,0,16*j),world,buildings[j]);
+                if(RandomUtils.nextInt(0,2)==0 || buildings[j].substring(buildings[j].length() - 1).equals("-"))
+                {
+                    loadStructure(base.add(16*i,0,16*j),world,buildings[j], Mirror.NONE, Rotation.NONE);
+                }
+                else
+                {
+                    loadStructure(base.add(16*i,0,16*j),world,buildings[j], Mirror.LEFT_RIGHT, Rotation.CLOCKWISE_90);
+                }
+
             }
         }
 
 
     }
+
+
 }

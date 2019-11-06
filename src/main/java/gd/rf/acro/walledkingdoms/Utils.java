@@ -59,7 +59,7 @@ public class Utils {
     private int rotation;
     private int mirror;
 
-    public static void loadStructure(BlockPos pos, World world, String name) {
+    public static void loadStructure(BlockPos pos, World world, String name, Mirror mirror, Rotation rotation) {
         boolean flag = false;
         if (!world.isRemote) {
             WorldServer worldserver = (WorldServer) world;
@@ -72,8 +72,8 @@ public class Utils {
                 world.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
                 flag = true;
                 if (flag) {
-                    PlacementSettings placementsettings = (new PlacementSettings()).setMirror(Mirror.NONE)
-                            .setRotation(Rotation.NONE).setIgnoreEntities(false).setChunk((ChunkPos) null)
+                    PlacementSettings placementsettings = (new PlacementSettings()).setMirror(mirror)
+                            .setRotation(rotation).setIgnoreEntities(false).setChunk((ChunkPos) null)
                             .setReplacedBlock((Block) null).setIgnoreStructureBlock(true);
 
                     template.addBlocksToWorldChunk(world, pos.down(), placementsettings);
