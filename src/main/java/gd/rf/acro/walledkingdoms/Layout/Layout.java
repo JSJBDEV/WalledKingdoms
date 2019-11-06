@@ -25,9 +25,9 @@ public class Layout {
         return  csvLayout;
     }
 
-    public static char pickBuildingFromStyle(int style)
+    public static String pickBuildingFromStyle(int style)
     {
-        char[] europe = {'a','b','c','d'};
+        String[] europe = {"wk_china_com_0","wk_china_com_1","wk_china_res_0","wk_china_res_1"};
 
         switch (style)
         {
@@ -36,7 +36,7 @@ public class Layout {
 
 
         }
-        return 0;
+        return "";
     }
 
 
