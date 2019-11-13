@@ -52,7 +52,6 @@ public class EntityCitizen extends EntityMob implements IRangedAttackMob {
     @Override
     protected void initEntityAI() {
         this.tasks.addTask(0, new EntityAISwimming(this));
-        //this.tasks.addTask(2, new EntityAICitizenAttack(this, 1.0D, false));
         this.tasks.addTask(3,new EntityAIAttackRanged(this,1.0D,10,15));
         this.tasks.addTask(5, new EntityAIMoveTowardsRestriction(this, 1.0D));
         this.tasks.addTask(7, new EntityAIWander(this, 1.0D));

@@ -25,7 +25,8 @@ public class EntityCitizenPassive extends EntityMob {
     private static final DataParameter<Boolean> ARMS_RAISED = EntityDataManager.createKey(EntityCitizenPassive.class, DataSerializers.BOOLEAN);
     public EntityCitizenPassive(World world) {
         super(world);
-        setCanPickUpLoot(true);
+        setCanPickUpLoot(false);
+        setDropItemsWhenDead(false);
     }
     @Override
     protected void entityInit() {
@@ -69,7 +70,7 @@ public class EntityCitizenPassive extends EntityMob {
         {
             this.setCustomNameTag(genName(5));
         }
-        if(!this.world.isRemote)
+        if(this.world.isRemote)
         {
             player.sendMessage(new TextComponentString("<"+this.getCustomNameTag()+"> "+"Hello "+player.getName()+"!"));
         }
@@ -77,4 +78,14 @@ public class EntityCitizenPassive extends EntityMob {
 
         return super.processInteract(player,hand);
     }
+
+    @Override
+    public void onUpdate() {
+        super.onUpdate();
+        if(this.ticksExisted%50==0)
+        {
+            System.out.println("50 ticks have passed");
+        }
+    }
+
 }
