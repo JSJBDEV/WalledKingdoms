@@ -1,6 +1,5 @@
 package gd.rf.acro.walledkingdoms;
 
-import gd.rf.acro.walledkingdoms.Citizens.EntityCitizenPassive;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -8,17 +7,16 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityTippedArrow;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemMap;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
-import net.minecraft.util.math.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
@@ -67,9 +65,15 @@ public class Utils {
             WorldServer worldserver = (WorldServer) world;
             MinecraftServer minecraftserver = world.getMinecraftServer();
             TemplateManager templatemanager = worldserver.getStructureTemplateManager();
+            ResourceLocation air_loc = new ResourceLocation("walledkingdoms", "clear_air");
+            Template air_template = templatemanager.getTemplate(minecraftserver, air_loc);
             ResourceLocation loc = new ResourceLocation("walledkingdoms", name);
             Template template = templatemanager.getTemplate(minecraftserver, loc);
             if (template != null) {
+                BlockPos air_pos = pos.add(0,32,0);
+                IBlockState air_iblockstate = world.getBlockState(air_pos);
+                world.notifyBlockUpdate(air_pos, air_iblockstate, air_iblockstate, 3);
+
                 IBlockState iblockstate = world.getBlockState(pos);
                 world.notifyBlockUpdate(pos, iblockstate, iblockstate, 3);
                 flag = true;
@@ -78,6 +82,7 @@ public class Utils {
                             .setRotation(rotation).setIgnoreEntities(false).setChunk((ChunkPos) null)
                             .setReplacedBlock((Block) null).setIgnoreStructureBlock(true);
 
+                    air_template.addBlocksToWorldChunk(world, air_pos.down(), placementsettings);
                     template.addBlocksToWorldChunk(world, pos.down(), placementsettings);
                 }
             }
@@ -193,56 +198,6 @@ public class Utils {
         arrow.setDamage(RandomUtils.nextInt(0,5));
         attacker.world.spawnEntity(arrow);
     }
-
-
-    public static void initVillager(World world, BlockPos pos,boolean mirror)
-    {
-        EntityCitizenPassive villager = world.getEntitiesWithinAABB(EntityCitizenPassive.class,new AxisAlignedBB(pos,pos.add(16,32,16))).get(0);
-        giveProfessionItem(villager,0,true);
-        setCitizenHouse(villager,pos,mirror);
-    }
-
-
-    public static void giveProfessionItem(EntityCitizenPassive entity, int profession, boolean isRandom)
-    {
-        if(isRandom)
-        {
-            profession = RandomUtils.nextInt(0,5);
-        }
-        switch (profession)
-        {
-            case 0: //butcher
-                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.PORKCHOP));
-                break;
-            case 1: //baker
-                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.BREAD));
-                break;
-            case 2: //blacksmith
-                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Blocks.ANVIL));
-                break;
-            case 3: //silversmith
-                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.CLOCK));
-                break;
-            case 4: //stonemason
-                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Blocks.STONE_BRICK_STAIRS));
-                break;
-        }
-    }
-    public static void setCitizenHouse(EntityCitizenPassive entity, BlockPos blockPos, boolean mirror)
-    {
-        //requires the position that the generator would use (least positive x and z corner)
-        ItemStack item = entity.getHeldItem(EnumHand.MAIN_HAND);
-        if(!item.hasTagCompound())
-        {
-            item.setTagCompound(new NBTTagCompound());
-        }
-        NBTTagCompound tags = item.getTagCompound();
-        tags.setBoolean("mirror",mirror);
-        tags.setInteger("x",blockPos.getX());
-        tags.setInteger("y",blockPos.getY());
-        tags.setInteger("z",blockPos.getZ());
-    }
-
 
 
 
