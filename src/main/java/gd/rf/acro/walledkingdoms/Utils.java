@@ -1,5 +1,6 @@
 package gd.rf.acro.walledkingdoms;
 
+import gd.rf.acro.walledkingdoms.Citizens.EntityCitizenPassive;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -7,16 +8,17 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityTippedArrow;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemMap;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.math.*;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
@@ -197,6 +199,58 @@ public class Utils {
         arrow.setVelocity(lookdir.x*2,lookdir.y*2+0.05,lookdir.z*2);
         arrow.setDamage(RandomUtils.nextInt(0,5));
         attacker.world.spawnEntity(arrow);
+    }
+
+    public static void initVillager(World world, BlockPos pos,boolean mirror)
+    {
+        List<EntityCitizenPassive> villagers = world.getEntitiesWithinAABB(EntityCitizenPassive.class,new AxisAlignedBB(pos,pos.add(16,32,16)));
+
+        if(villagers.size()>0)
+        {
+            giveProfessionItem(villagers.get(0),0,true);
+            setCitizenHouse(villagers.get(0),pos,mirror);
+        }
+    }
+
+
+    public static void giveProfessionItem(EntityCitizenPassive entity, int profession, boolean isRandom)
+    {
+        if(isRandom)
+        {
+            profession = RandomUtils.nextInt(0,5);
+        }
+        switch (profession)
+        {
+            case 0: //butcher
+                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.PORKCHOP));
+                break;
+            case 1: //baker
+                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.BREAD));
+                break;
+            case 2: //blacksmith
+                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Blocks.ANVIL));
+                break;
+            case 3: //silversmith
+                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.CLOCK));
+                break;
+            case 4: //stonemason
+                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Blocks.STONE_BRICK_STAIRS));
+                break;
+        }
+    }
+    public static void setCitizenHouse(EntityCitizenPassive entity, BlockPos blockPos, boolean mirror)
+    {
+        //requires the position that the generator would use (least positive x and z corner)
+        ItemStack item = entity.getHeldItem(EnumHand.MAIN_HAND);
+        if(!item.hasTagCompound())
+        {
+            item.setTagCompound(new NBTTagCompound());
+        }
+        NBTTagCompound tags = item.getTagCompound();
+        tags.setBoolean("mirror",mirror);
+        tags.setInteger("x",blockPos.getX());
+        tags.setInteger("y",blockPos.getY());
+        tags.setInteger("z",blockPos.getZ());
     }
 
 
