@@ -30,6 +30,7 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.RandomUtils;
 import scala.actors.threadpool.Arrays;
 
+import javax.annotation.Nullable;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -61,7 +62,7 @@ public class Utils {
     private int rotation;
     private int mirror;
 
-    public static void loadStructure(BlockPos pos, World world, String name, Mirror mirror, Rotation rotation) {
+    public static void loadStructure(BlockPos pos, World world, String name, Mirror mirror, Rotation rotation,boolean ignoreEntities) {
         boolean flag = false;
         if (!world.isRemote) {
             WorldServer worldserver = (WorldServer) world;
@@ -81,7 +82,7 @@ public class Utils {
                 flag = true;
                 if (flag) {
                     PlacementSettings placementsettings = (new PlacementSettings()).setMirror(mirror)
-                            .setRotation(rotation).setIgnoreEntities(false).setChunk((ChunkPos) null)
+                            .setRotation(rotation).setIgnoreEntities(ignoreEntities).setChunk((ChunkPos) null)
                             .setReplacedBlock((Block) null).setIgnoreStructureBlock(true);
 
                     air_template.addBlocksToWorldChunk(world, air_pos.down(), placementsettings);
@@ -207,8 +208,11 @@ public class Utils {
 
         if(villagers.size()>0)
         {
-            giveProfessionItem(villagers.get(0),0,true);
-            setCitizenHouse(villagers.get(0),pos,mirror);
+            if(villagers.get(0).getHeldItem(EnumHand.MAIN_HAND).getItem()==Items.AIR) //allows for building specific professions
+            {
+                giveProfessionItem(villagers.get(0),0,true);
+                setCitizenHouse(villagers.get(0),pos,mirror);
+            }
         }
     }
 

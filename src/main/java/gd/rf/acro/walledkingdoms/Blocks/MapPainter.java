@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.storage.MapData;
 import org.apache.commons.io.FileUtils;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -34,8 +35,10 @@ public class MapPainter extends BlockBase {
             data.colors = Utils.imageUrlToMap("https://upload.wikimedia.org/wikipedia/commons/1/1c/Crystal_128_penguin.png");
             data.dimension=777;
             data.trackingPosition=false;
+            data.playersArrayList = new ArrayList<>();
             map.updateMapData(world,player,data);
             player.setHeldItem(hand,new ItemStack(map));
+
 
         }
         return super.onBlockActivated(world, pos, state, player, hand, p_onBlockActivated_6_, p_onBlockActivated_7_, p_onBlockActivated_8_, p_onBlockActivated_9_);
