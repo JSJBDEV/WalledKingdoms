@@ -18,12 +18,16 @@ public class ModItems {
     public static ItemBase ringDiamond = new ItemBase("ring_diamond");
     public static ItemBase ringEnder = new ItemBase("ring_enderpearl");
 
+    public static ItemTrinket circletEnder = new ItemTrinket("circlet_enderpearl");
+
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
             mineCharm,story,bow,
 
             //Vanity items for goldsmith/silversmith
             ringGold,ringEmerald,ringDiamond,ringEnder
+
+            ,circletEnder
 
 
         );
@@ -39,5 +43,7 @@ public class ModItems {
         ringEmerald.registerItemModel();
         ringDiamond.registerItemModel();
         ringEnder.registerItemModel();
+
+        circletEnder.registerItemModel();
     }
 }

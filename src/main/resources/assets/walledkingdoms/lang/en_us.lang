@@ -9,7 +9,7 @@ item.ring_gold.name=Gold Ring
 item.ring_emerald.name=Emerald Ring
 item.ring_diamond.name=Diamond Ring
 item.ring_enderpearl.name=Enderpearl Ring
-item.circletEnder.name=Ender Circlet
+item.circlet_enderpearl.name=Ender Circlet
 
 item.story.name=Story Book
 
