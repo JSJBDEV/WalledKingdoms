@@ -1,5 +1,6 @@
 package gd.rf.acro.walledkingdoms.Citizens;
 
+import gd.rf.acro.walledkingdoms.Utils;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -32,30 +33,44 @@ public class Citizens {
     }
 
 
-    public static void giveProfessionItem(EntityCitizenPassive entity, int profession, boolean isRandom)
+    public static int giveProfessionItem(EntityCitizenPassive entity, int profession, boolean isRandom)
     {
         if(isRandom)
         {
-            profession = RandomUtils.nextInt(0,5);
+            profession = RandomUtils.nextInt(0,7);
         }
         switch (profession)
         {
             case 0: //butcher
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.PORKCHOP));
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
                 break;
             case 1: //baker
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.BREAD));
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
                 break;
             case 2: //blacksmith
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Blocks.ANVIL));
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
                 break;
             case 3: //goldsmith
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.GOLD_INGOT));
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
                 break;
             case 4: //builder
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Blocks.STONE_BRICK_STAIRS));
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
+                break;
+            case 5: //clockmaker
+                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.CLOCK));
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
+                break;
+            default: //court appointment
+                entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.DIAMOND));
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
                 break;
         }
+        return profession;
     }
     public static void setCitizenHouse(EntityCitizenPassive entity, BlockPos blockPos, boolean mirror)
     {
@@ -71,4 +86,6 @@ public class Citizens {
         tags.setInteger("y",blockPos.getY());
         tags.setInteger("z",blockPos.getZ());
     }
+
+
 }

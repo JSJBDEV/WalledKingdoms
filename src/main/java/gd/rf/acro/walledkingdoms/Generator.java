@@ -1,33 +1,24 @@
 package gd.rf.acro.walledkingdoms;
 
-import gd.rf.acro.walledkingdoms.Citizens.EntityCitizen;
-import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.scoreboard.ScoreCriteria;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.Mirror;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.world.ChunkEvent;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.EntityEntry;
-import net.minecraftforge.fml.common.registry.EntityEntryBuilder;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import org.apache.commons.lang3.RandomUtils;
-import scala.Int;
-import scala.collection.$colon$plus;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
 import static gd.rf.acro.walledkingdoms.Citizens.Citizens.initVillager;
-import static gd.rf.acro.walledkingdoms.Layout.Layout.*;
+import static gd.rf.acro.walledkingdoms.Layout.Layout.genLayoutFromSeed;
+import static gd.rf.acro.walledkingdoms.Layout.Layout.makeCityCoherent;
 import static gd.rf.acro.walledkingdoms.Politics.Politics.genImportantInformation;
 import static gd.rf.acro.walledkingdoms.Utils.*;
 
@@ -61,6 +52,7 @@ public class Generator {
 
 
     }
+
 
     public static void createKingdom(World world, int kingdomNo, EntityPlayer reference)
     {
