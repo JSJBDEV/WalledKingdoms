@@ -4,6 +4,13 @@ tile.stone_brick.name=Bricks Of Stone
 tile.painter.name=Penguin Painter
 
 item.mine_charm.name=True Adventurers Charm
+
+item.ring_gold.name=Gold Ring
+item.ring_emerald.name=Emerald Ring
+item.ring_diamond.name=Diamond Ring
+item.ring_enderpearl.name=Enderpearl Ring
+item.circletEnder.name=Ender Circlet
+
 item.story.name=Story Book
 
 itemGroup.walledkingdoms=Walled Kingdoms

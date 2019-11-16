@@ -11,9 +11,19 @@ public class ModItems {
     public static ItemBase mineCharm = new ItemBase("mine_charm").setCreativeTab(WalledKingdoms.tab);
     public static StoryBook story = new StoryBook("story").setCreativeTab(WalledKingdoms.tab);
     public  static ItemBow bow = new ItemBow("bow");
+
+    //Vanity items for goldsmith/silversmith
+    public static ItemBase ringGold = new ItemBase("ring_gold");
+    public static ItemBase ringEmerald = new ItemBase("ring_emerald");
+    public static ItemBase ringDiamond = new ItemBase("ring_diamond");
+    public static ItemBase ringEnder = new ItemBase("ring_enderpearl");
+
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
-            mineCharm,story,bow
+            mineCharm,story,bow,
+
+            //Vanity items for goldsmith/silversmith
+            ringGold,ringEmerald,ringDiamond,ringEnder
 
 
         );
@@ -23,5 +33,11 @@ public class ModItems {
         mineCharm.registerItemModel();
         story.registerItemModel();
         bow.registerItemModel();
+
+        //Vanity items for goldsmith/silversmith
+        ringGold.registerItemModel();
+        ringEmerald.registerItemModel();
+        ringDiamond.registerItemModel();
+        ringEnder.registerItemModel();
     }
 }
