@@ -26,6 +26,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
+import static gd.rf.acro.walledkingdoms.Citizens.Citizens.initVillager;
 import static gd.rf.acro.walledkingdoms.Layout.Layout.*;
 import static gd.rf.acro.walledkingdoms.Politics.Politics.genImportantInformation;
 import static gd.rf.acro.walledkingdoms.Utils.*;
