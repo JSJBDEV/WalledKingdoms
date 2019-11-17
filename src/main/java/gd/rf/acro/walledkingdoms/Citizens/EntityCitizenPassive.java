@@ -85,13 +85,6 @@ public class EntityCitizenPassive extends EntityMob {
         return super.processInteract(player,hand);
     }
 
-    @Override
-    public void onUpdate() {
-        super.onUpdate();
-        if(this.ticksExisted%50==0)
-        {
-            System.out.println("50 ticks have passed");
-        }
-    }
+
 
 }

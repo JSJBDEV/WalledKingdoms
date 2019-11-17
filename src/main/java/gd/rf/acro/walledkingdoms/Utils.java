@@ -5,8 +5,12 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityTippedArrow;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemWrittenBook;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.nbt.NBTTagList;
+import net.minecraft.nbt.NBTTagString;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
@@ -204,6 +208,22 @@ public class Utils {
         tags.setIntArray(name,integer);
         stack.setTagCompound(tags);
     }
+
+    public static ItemStack createBook(String author, String title,String ...pages)
+    {
+        ItemStack book = new ItemStack(Items.WRITTEN_BOOK);
+        NBTTagCompound tags = new NBTTagCompound();
+        tags.setString("author",author);
+        tags.setString("title",title);
+        NBTTagList contents = new NBTTagList();
+        for (String page : pages) {
+            contents.appendTag(new NBTTagString(page));
+        }
+        tags.setTag("pages",contents);
+        book.setTagCompound(tags);
+        return book;
+    }
+
 
 
 
