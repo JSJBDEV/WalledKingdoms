@@ -73,12 +73,13 @@ public class Generator {
                 if(RandomUtils.nextInt(0,2)==0 || buildings[j].substring(buildings[j].length() - 1).equals("-"))
                 {
                     loadStructure(base.add(16*i,0,16*j),world,buildings[j], Mirror.NONE, Rotation.NONE,false);
-                    initVillager(world,base.add(16*i,0,16*j),false);
+                    initVillager(world,base.add(16*i,0,16*j),false,kingdomNo);
                 }
                 else
                 {
                     loadStructure(base.add(16*i,0,16*j),world,buildings[j], Mirror.LEFT_RIGHT, Rotation.CLOCKWISE_90,false);
-                    initVillager(world,base.add(16*i,0,16*j),true);
+                    initVillager(world,base.add(16*i,0,16*j),true,kingdomNo);
+                    //possibly need to add rotation to the file as a '+' prefix to indicate this code
                 }
 
             }

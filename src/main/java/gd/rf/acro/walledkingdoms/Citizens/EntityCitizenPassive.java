@@ -47,7 +47,7 @@ public class EntityCitizenPassive extends EntityMob {
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
         // Here we set various attributes for our mob. Like maximum health, armor, speed, ...
-        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(35.0D);
+        this.getEntityAttribute(SharedMonsterAttributes.FOLLOW_RANGE).setBaseValue(100.0D);
         this.getEntityAttribute(SharedMonsterAttributes.MOVEMENT_SPEED).setBaseValue(0.5D);
         this.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(2.0D);
     }
@@ -85,6 +85,9 @@ public class EntityCitizenPassive extends EntityMob {
         return super.processInteract(player,hand);
     }
 
-
-
+    @Override
+    public void onUpdate() {
+        super.onUpdate();
+        this.getNavigator().tryMoveToXYZ(0,4,0,0.6D);
+    }
 }

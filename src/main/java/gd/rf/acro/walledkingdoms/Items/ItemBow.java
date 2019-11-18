@@ -14,7 +14,6 @@ public class ItemBow extends ItemBase {
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World p_onItemRightClick_1_, EntityPlayer p_onItemRightClick_2_, EnumHand p_onItemRightClick_3_) {
-        //p_onItemRightClick_2_.setHeldItem(p_onItemRightClick_3_,Utils.createBook("me","a book","{\"text\":\"Minecraft Tools book\"}","book.page2.text"));
         Utils.makeRangedAttack(p_onItemRightClick_2_);
         return super.onItemRightClick(p_onItemRightClick_1_, p_onItemRightClick_2_, p_onItemRightClick_3_);
     }

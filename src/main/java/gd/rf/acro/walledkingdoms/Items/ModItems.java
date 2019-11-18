@@ -11,6 +11,7 @@ public class ModItems {
     public static ItemBase mineCharm = new ItemBase("mine_charm").setCreativeTab(WalledKingdoms.tab);
     public static StoryBook story = new StoryBook("story").setCreativeTab(WalledKingdoms.tab);
     public  static ItemBow bow = new ItemBow("bow");
+    public static ItemDebug debug = new ItemDebug("debug");
 
     //Vanity items for goldsmith/silversmith
     public static ItemBase ringGold = new ItemBase("ring_gold");
@@ -22,7 +23,7 @@ public class ModItems {
 
     public static void register(IForgeRegistry<Item> registry) {
         registry.registerAll(
-            mineCharm,story,bow,
+            mineCharm,story,bow,debug,
 
             //Vanity items for goldsmith/silversmith
             ringGold,ringEmerald,ringDiamond,ringEnder
@@ -37,6 +38,7 @@ public class ModItems {
         mineCharm.registerItemModel();
         story.registerItemModel();
         bow.registerItemModel();
+        debug.registerItemModel();
 
         //Vanity items for goldsmith/silversmith
         ringGold.registerItemModel();
