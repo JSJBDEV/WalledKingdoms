@@ -2,6 +2,7 @@ package gd.rf.acro.walledkingdoms;
 
 import gd.rf.acro.walledkingdoms.Blocks.ModBlocks;
 import gd.rf.acro.walledkingdoms.Citizens.ModEntities;
+import gd.rf.acro.walledkingdoms.Items.ItemTrinketTick;
 import gd.rf.acro.walledkingdoms.Items.ModItems;
 import gd.rf.acro.walledkingdoms.proxy.CommonProxy;
 import net.minecraft.block.Block;
@@ -10,6 +11,7 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -49,6 +51,10 @@ public class WalledKingdoms
     {
         // some example code
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
+        // TickEvents are on the FML bus:
+        FMLCommonHandler.instance().bus().register(new gd.rf.acro.walledkingdoms.Items.ItemTrinketTick());
+
     }
 
     @Mod.EventBusSubscriber
