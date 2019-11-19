@@ -11,6 +11,7 @@ import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.apache.commons.lang3.RandomUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -79,11 +80,14 @@ public class Generator {
                 {
                     loadStructure(base.add(16*i,0,16*j),world,buildings[j], Mirror.LEFT_RIGHT, Rotation.CLOCKWISE_90,false);
                     initVillager(world,base.add(16*i,0,16*j),true,kingdomNo);
-                    //possibly need to add rotation to the file as a '+' prefix to indicate this code
+                    buildings[j]="+"+buildings[j]; //modifies layout file denoting rotation
                 }
 
             }
+            String override = String.join(",",buildings);
+            layout.set(i,override);
         }
+        writeLines(layout,pref+"layout.wk");
 
 
     }

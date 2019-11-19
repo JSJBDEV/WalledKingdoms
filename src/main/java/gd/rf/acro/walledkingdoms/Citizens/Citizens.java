@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumHand;
@@ -106,6 +107,47 @@ public class Citizens {
         return houses[(int)Math.floor((entity.posZ-z)/16)];
 
 
+    }
+
+    public static String getProfessionNameFromItem(Item item,boolean onlyKeepers)
+    {
+        if(item==Items.BREAD)
+        {
+            return "baker";
+        }
+        if(item==Items.PORKCHOP)
+        {
+            return "butcher";
+        }
+        if(item==Items.CLOCK)
+        {
+            return "clockmaker";
+        }
+        if(item==Items.GOLD_INGOT)
+        {
+            return "goldsmith";
+        }
+
+        if(item==Item.getItemFromBlock(Blocks.ANVIL))
+        {
+            return "baker";
+        }
+        if(!onlyKeepers) //keepers are people who require a worktable to do there job
+        {
+            if(item==Items.DIAMOND)
+            {
+                return "court appointment";
+            }
+            if(item==Item.getItemFromBlock(Blocks.STONE_BRICK_STAIRS))
+            {
+                return "builder";
+            }
+            else
+            {
+                return "unemployed";
+            }
+        }
+        return "vagrant"; //this should never be returned
     }
 
 
