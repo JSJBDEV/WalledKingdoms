@@ -2,7 +2,6 @@ package gd.rf.acro.walledkingdoms;
 
 import gd.rf.acro.walledkingdoms.Blocks.ModBlocks;
 import gd.rf.acro.walledkingdoms.Citizens.ModEntities;
-import gd.rf.acro.walledkingdoms.Items.ItemTrinketTick;
 import gd.rf.acro.walledkingdoms.Items.ModItems;
 import gd.rf.acro.walledkingdoms.proxy.CommonProxy;
 import net.minecraft.block.Block;

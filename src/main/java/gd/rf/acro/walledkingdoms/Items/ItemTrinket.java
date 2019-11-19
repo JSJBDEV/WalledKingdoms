@@ -1,15 +1,12 @@
 package gd.rf.acro.walledkingdoms.Items;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class ItemTrinket extends ItemBase {
     public ItemTrinket(String name) { super(name); }
@@ -34,17 +31,6 @@ public class ItemTrinket extends ItemBase {
         {
             return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemstack);
         }
-    }
-
-
-    @SubscribeEvent
-    public void onItemTick(World world, EntityPlayer playerIn)
-    {
-        if(!world.isRemote)
-            playerIn.addPotionEffect(new PotionEffect(MobEffects.SPEED, 2, 1));
-        if(!world.isRemote)
-            playerIn.addPotionEffect(new PotionEffect(MobEffects.SPEED, 2, 1));
-
     }
 
 
