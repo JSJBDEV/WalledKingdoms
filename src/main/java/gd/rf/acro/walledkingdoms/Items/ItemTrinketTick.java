@@ -18,8 +18,7 @@ public class ItemTrinketTick {
             String head_item = (player.getItemStackFromSlot(entityequipmentslot)).getUnlocalizedName();
             //System.out.println(head_item);
             if(head_item.equals("item.circlet_enderpearl")){
-
-                //System.out.println("Activated");
+                //Applies speed 2 and doubles damage taken
                 player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 3, 1));
                 player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 3, -10));
             }
