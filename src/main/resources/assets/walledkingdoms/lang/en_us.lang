@@ -11,6 +11,14 @@ item.ring_diamond.name=Diamond Ring
 item.ring_enderpearl.name=Enderpearl Ring
 item.circlet_enderpearl.name=Ender Circlet
 
+item.carcass_cow.name=Cow Carcass
+item.carcass_chicken.name=Chicken Carcass
+item.carcass_horse.name=Horse Carcass
+item.carcass_pig.name=Pig Carcass
+item.carcass_rabbit.name=Rabbit Carcass
+item.carcass_sheep.name=Sheep Carcass
+item.carcass_squid.name=Squid Carcass
+
 item.story.name=Story Book
 
 itemGroup.walledkingdoms=Walled Kingdoms
