@@ -2,6 +2,7 @@ package gd.rf.acro.walledkingdoms.Items;
 
 import gd.rf.acro.walledkingdoms.WalledKingdoms;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraftforge.registries.IForgeRegistry;
 
 /**
@@ -22,6 +23,11 @@ public class ModItems {
     public static ItemBase carcassRabbit = new ItemBase("carcass_rabbit");
     public static ItemBase carcassSquid = new ItemBase("carcass_squid");
     public static ItemBase carcassDonkey = new ItemBase("carcass_donkey");
+    public static ItemBase animalFat = new ItemBase("animal_fat");
+
+    //Food Items for Baker
+    public static ItemBase flourWheat = new ItemBase("flour_wheat");
+    public static ItemModFood stewBeef = new ItemModFood("stew_beef",8,12.8f ,false);
 
     //Vanity items for goldsmith/silversmith
     public static ItemBase ringGold = new ItemBase("ring_gold");
@@ -38,6 +44,10 @@ public class ModItems {
 
             //Carcass Items for Butcher
             carcassChicken, carcassCow,carcassHorse, carcassPig, carcassRabbit, carcassSheep, carcassSquid, carcassDonkey,
+            animalFat,
+
+            //Food Items for Baker
+            flourWheat, stewBeef,
 
             //Vanity items for goldsmith/silversmith
             ringGold,ringEmerald,ringDiamond,ringEnder,
@@ -64,6 +74,11 @@ public class ModItems {
         carcassSheep.registerItemModel();
         carcassSquid.registerItemModel();
         carcassDonkey.registerItemModel();
+        animalFat.registerItemModel();
+
+        //Food Items for Baker
+        flourWheat.registerItemModel();
+        stewBeef.registerItemModel();
 
         //Vanity items for goldsmith/silversmith
         ringGold.registerItemModel();

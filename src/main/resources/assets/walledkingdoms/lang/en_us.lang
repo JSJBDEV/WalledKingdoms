@@ -19,6 +19,10 @@ item.carcass_rabbit.name=Rabbit Carcass
 item.carcass_sheep.name=Sheep Carcass
 item.carcass_squid.name=Squid Carcass
 item.carcass_donkey.name=Donkey Carcass
+item.animal_fat.name=Animal Fat
+
+item.flour_wheat.name=Wheat Flour
+item.stew_beef.name=Beef Stew
 
 item.story.name=Story Book
 
