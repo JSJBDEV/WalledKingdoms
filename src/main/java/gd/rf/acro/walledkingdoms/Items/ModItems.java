@@ -21,6 +21,7 @@ public class ModItems {
     public static ItemBase carcassHorse = new ItemBase("carcass_horse");
     public static ItemBase carcassRabbit = new ItemBase("carcass_rabbit");
     public static ItemBase carcassSquid = new ItemBase("carcass_squid");
+    public static ItemBase carcassDonkey = new ItemBase("carcass_donkey");
 
     //Vanity items for goldsmith/silversmith
     public static ItemBase ringGold = new ItemBase("ring_gold");
@@ -28,6 +29,7 @@ public class ModItems {
     public static ItemBase ringDiamond = new ItemBase("ring_diamond");
     public static ItemBase ringEnder = new ItemBase("ring_enderpearl");
 
+    //Trinket Items
     public static ItemTrinket circletEnder = new ItemTrinket("circlet_enderpearl");
 
     public static void register(IForgeRegistry<Item> registry) {
@@ -35,11 +37,12 @@ public class ModItems {
             mineCharm,story,bow,debug,
 
             //Carcass Items for Butcher
-            carcassChicken, carcassCow,carcassHorse, carcassPig, carcassRabbit, carcassSheep, carcassSquid,
+            carcassChicken, carcassCow,carcassHorse, carcassPig, carcassRabbit, carcassSheep, carcassSquid, carcassDonkey,
 
             //Vanity items for goldsmith/silversmith
             ringGold,ringEmerald,ringDiamond,ringEnder,
 
+            //Trinket Items
             circletEnder
 
 
@@ -52,12 +55,23 @@ public class ModItems {
         bow.registerItemModel();
         debug.registerItemModel();
 
+        //Carcass Items for Butcher
+        carcassChicken.registerItemModel();
+        carcassCow.registerItemModel();
+        carcassHorse.registerItemModel();
+        carcassPig.registerItemModel();
+        carcassRabbit.registerItemModel();
+        carcassSheep.registerItemModel();
+        carcassSquid.registerItemModel();
+        carcassDonkey.registerItemModel();
+
         //Vanity items for goldsmith/silversmith
         ringGold.registerItemModel();
         ringEmerald.registerItemModel();
         ringDiamond.registerItemModel();
         ringEnder.registerItemModel();
 
+        //Trinket Items
         circletEnder.registerItemModel();
     }
 }
