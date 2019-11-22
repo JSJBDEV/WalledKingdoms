@@ -10,6 +10,12 @@ item.ring_emerald.name=Emerald Ring
 item.ring_diamond.name=Diamond Ring
 item.ring_enderpearl.name=Enderpearl Ring
 item.circlet_enderpearl.name=Ender Circlet
+item.ceremonial_blade.name=Ceremonial Blade
+item.candlestick.name=Candlestick
+item.plate_gold.name=Golden Plate
+item.plate_silver.name=Silver Plate
+item.chalice_gold.name=Golden Chalice
+item.chalice_silver.name=Silver Chalice
 
 item.carcass_cow.name=Cow Carcass
 item.carcass_chicken.name=Chicken Carcass

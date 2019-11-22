@@ -27,13 +27,19 @@ public class ModItems {
 
     //Food Items for Baker
     public static ItemBase flourWheat = new ItemBase("flour_wheat");
-    public static ItemModFood stewBeef = new ItemModFood("stew_beef",8,12.8f ,false);
+    public static ItemModFood stewBeef = new ItemModFood("stew_beef",8,13.0f ,false);
 
     //Vanity items for goldsmith/silversmith
     public static ItemBase ringGold = new ItemBase("ring_gold");
     public static ItemBase ringEmerald = new ItemBase("ring_emerald");
     public static ItemBase ringDiamond = new ItemBase("ring_diamond");
     public static ItemBase ringEnder = new ItemBase("ring_enderpearl");
+    public static ItemBase ceremonialBlade = new ItemBase("ceremonial_blade");
+    public static ItemBase candlestick = new ItemBase("candlestick");
+    public static ItemBase plateGold = new ItemBase("plate_gold");
+    public static ItemBase plateSilver = new ItemBase("plate_silver");
+    public static ItemBase chaliceGold = new ItemBase("chalice_gold");
+    public static ItemBase chaliceSilver = new ItemBase("chalice_silver");
 
     //Trinket Items
     public static ItemTrinket circletEnder = new ItemTrinket("circlet_enderpearl");
@@ -50,7 +56,8 @@ public class ModItems {
             flourWheat, stewBeef,
 
             //Vanity items for goldsmith/silversmith
-            ringGold,ringEmerald,ringDiamond,ringEnder,
+            ringGold,ringEmerald,ringDiamond,ringEnder,ceremonialBlade,candlestick,plateGold,plateSilver,chaliceGold,
+            chaliceSilver,
 
             //Trinket Items
             circletEnder
@@ -85,6 +92,12 @@ public class ModItems {
         ringEmerald.registerItemModel();
         ringDiamond.registerItemModel();
         ringEnder.registerItemModel();
+        ceremonialBlade.registerItemModel();
+        candlestick.registerItemModel();
+        plateGold.registerItemModel();
+        plateSilver.registerItemModel();
+        chaliceGold.registerItemModel();
+        chaliceSilver.registerItemModel();
 
         //Trinket Items
         circletEnder.registerItemModel();

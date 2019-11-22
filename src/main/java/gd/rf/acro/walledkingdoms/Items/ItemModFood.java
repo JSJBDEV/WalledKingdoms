@@ -5,8 +5,8 @@ import net.minecraft.item.ItemFood;
 
 public class ItemModFood extends ItemFood {
     private String name;
-    public ItemModFood(String name, int amount, float saturation, boolean isWolfFood) {
-        super(amount, saturation, isWolfFood);
+    public ItemModFood(String name, int hunger, float saturation, boolean isWolfFood) {
+        super(hunger, saturation, isWolfFood);
         this.name=name;
         setUnlocalizedName(name);
         setRegistryName(name);
