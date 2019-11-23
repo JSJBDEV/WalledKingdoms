@@ -209,15 +209,15 @@ public class Utils {
         stack.setTagCompound(tags);
     }
 
-    public static ItemStack createBook(String author, String title,String ...pages)
+    public static ItemStack createBook(String author, String title,Object ...pages)
     {
         ItemStack book = new ItemStack(Items.WRITTEN_BOOK);
         NBTTagCompound tags = new NBTTagCompound();
         tags.setString("author",author);
         tags.setString("title",title);
         NBTTagList contents = new NBTTagList();
-        for (String page : pages) {
-            contents.appendTag(new NBTTagString(page));
+        for (Object page : pages) {
+            contents.appendTag(new NBTTagString("{\"text\":\""+page+"\"}"));
         }
         tags.setTag("pages",contents);
         book.setTagCompound(tags);

@@ -1,6 +1,7 @@
 package gd.rf.acro.walledkingdoms.Items;
 
 import gd.rf.acro.walledkingdoms.Citizens.Citizens;
+import gd.rf.acro.walledkingdoms.Dominion.Dominion;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -16,7 +17,8 @@ public class ItemDebug extends ItemBase {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
         //p_onItemRightClick_2_.setHeldItem(p_onItemRightClick_3_,Utils.createBook("me","a book","{\"text\":\"Minecraft Tools book\"}","book.page2.text"));
-        player.sendMessage(new TextComponentString(Citizens.getHouseTypeFromCurrentCoords(player,0)));
+        //player.sendMessage(new TextComponentString(Citizens.getHouseTypeFromCurrentCoords(player,0)));
+        Dominion.makeVillageCensus(world,player.getPosition(),player);
         return super.onItemRightClick(world, player, hand);
     }
 }
