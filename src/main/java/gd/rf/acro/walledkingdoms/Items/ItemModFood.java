@@ -10,6 +10,7 @@ public class ItemModFood extends ItemFood {
         this.name=name;
         setUnlocalizedName(name);
         setRegistryName(name);
+        setCreativeTab(WalledKingdoms.tab);
     }
 
     public void registerItemModel() {WalledKingdoms.proxy.registerItemRenderer(this, 0, name); }

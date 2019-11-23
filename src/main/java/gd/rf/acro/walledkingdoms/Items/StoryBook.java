@@ -22,11 +22,7 @@ public class StoryBook extends ItemBase {
         super(name);
     }
 
-    @Override
-    public StoryBook setCreativeTab(CreativeTabs tab) {
-        super.setCreativeTab(tab);
-        return this;
-    }
+
 
     @Override
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {

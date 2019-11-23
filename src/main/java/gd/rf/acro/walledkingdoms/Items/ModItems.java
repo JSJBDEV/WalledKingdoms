@@ -9,8 +9,8 @@ import net.minecraftforge.registries.IForgeRegistry;
  * Created by Acro on 15/08/2018.
  */
 public class ModItems {
-    public static ItemBase mineCharm = new ItemBase("mine_charm").setCreativeTab(WalledKingdoms.tab);
-    public static StoryBook story = new StoryBook("story").setCreativeTab(WalledKingdoms.tab);
+    public static ItemBase mineCharm = new ItemBase("mine_charm");
+    public static StoryBook story = new StoryBook("story");
     public static ItemBow bow = new ItemBow("bow");
     public static ItemDebug debug = new ItemDebug("debug");
 
