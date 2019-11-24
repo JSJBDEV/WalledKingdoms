@@ -10,6 +10,7 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -88,6 +89,21 @@ public class EntityCitizenPassive extends EntityMob {
     @Override
     public void onUpdate() {
         super.onUpdate();
-        this.getNavigator().tryMoveToXYZ(0,4,0,0.6D);
+        int x=0;
+        int y=1000;
+        int z=0;
+        if(ticksExisted%100==0 && this.getHeldItem(EnumHand.MAIN_HAND).hasTagCompound())
+        {
+            NBTTagCompound tags = this.getHeldItem(EnumHand.MAIN_HAND).getTagCompound();
+            if(tags.getBoolean("shouldPath"))
+            {
+                x=tags.getInteger("pathx");
+                y=tags.getInteger("pathy");
+                z=tags.getInteger("pathz");
+            }
+        }
+
+        this.getNavigator().tryMoveToXYZ(x,y,z,0.6D);
+
     }
 }

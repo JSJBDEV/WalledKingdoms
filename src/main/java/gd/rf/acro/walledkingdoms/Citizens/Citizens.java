@@ -92,6 +92,7 @@ public class Citizens {
         tags.setInteger("homey",blockPos.getY());
         tags.setInteger("homez",blockPos.getZ());
         tags.setInteger("kingno",kingdomNumber);
+        tags.setBoolean("shouldPath",false);
     }
 
     public static String getHouseTypeFromCurrentCoords(EntityPlayer entity, int kingdomNo)
