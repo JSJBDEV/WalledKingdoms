@@ -28,6 +28,7 @@ public class ModItems {
     //Food Items for Baker
     public static ItemBase flourWheat = new ItemBase("flour_wheat");
     public static ItemModFood stewBeef = new ItemModFood("stew_beef",8,13.0f ,false);
+    public static ItemModFood pancakes = new ItemModFood("pancakes",4,2.0f ,false);
 
     //Vanity items for goldsmith/silversmith
     public static ItemBase ringGold = new ItemBase("ring_gold");
@@ -53,7 +54,7 @@ public class ModItems {
             animalFat,
 
             //Food Items for Baker
-            flourWheat, stewBeef,
+            flourWheat, stewBeef, pancakes,
 
             //Vanity items for goldsmith/silversmith
             ringGold,ringEmerald,ringDiamond,ringEnder,ceremonialBlade,candlestick,plateGold,plateSilver,chaliceGold,
@@ -86,6 +87,7 @@ public class ModItems {
         //Food Items for Baker
         flourWheat.registerItemModel();
         stewBeef.registerItemModel();
+        pancakes.registerItemModel();
 
         //Vanity items for goldsmith/silversmith
         ringGold.registerItemModel();
