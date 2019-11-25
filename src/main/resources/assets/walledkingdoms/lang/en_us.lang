@@ -27,6 +27,8 @@ item.carcass_squid.name=Squid Carcass
 item.carcass_donkey.name=Donkey Carcass
 item.animal_fat.name=Animal Fat
 
+item.butchers_knife.name=Butcher's Knife
+
 item.flour_wheat.name=Wheat Flour
 item.stew_beef.name=Beef Stew
 item.pancakes.name=Pancakes
