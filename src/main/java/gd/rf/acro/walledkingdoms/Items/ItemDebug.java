@@ -18,7 +18,8 @@ public class ItemDebug extends ItemBase {
     public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
         //p_onItemRightClick_2_.setHeldItem(p_onItemRightClick_3_,Utils.createBook("me","a book","{\"text\":\"Minecraft Tools book\"}","book.page2.text"));
         //player.sendMessage(new TextComponentString(Citizens.getHouseTypeFromCurrentCoords(player,0)));
-        Dominion.makeVillageCensus(world,player.getPosition(),player);
+        //Dominion.makeVillageCensus(world,player.getPosition(),player);
+        Citizens.createBuilder(world,player.getPosition());
         return super.onItemRightClick(world, player, hand);
     }
 }

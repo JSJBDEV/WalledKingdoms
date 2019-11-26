@@ -38,6 +38,15 @@ public class Citizens {
         }
     }
 
+    public static void createBuilder(World world, BlockPos pos)
+    {
+        EntityCitizenPassive citizenPassive = new EntityCitizenPassive(world);
+        giveProfessionItem(citizenPassive,0,true);
+        setCitizenHouse(citizenPassive,pos,0,false);
+        citizenPassive.setPosition(pos.getX(),pos.getY(),pos.getZ());
+        world.spawnEntity(citizenPassive);
+    }
+
 
     public static int giveProfessionItem(EntityCitizenPassive entity, int profession, boolean isRandom)
     {
@@ -49,31 +58,32 @@ public class Citizens {
         {
             case 0: //butcher
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.PORKCHOP));
-                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0);
                 break;
             case 1: //baker
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.BREAD));
-                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0);
                 break;
             case 2: //blacksmith
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Blocks.ANVIL));
-                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0);
                 break;
             case 3: //goldsmith
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.GOLD_INGOT));
-                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0);
                 break;
             case 4: //builder
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Blocks.STONE_BRICK_STAIRS));
-                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",1);
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"coords",0,0);
                 break;
             case 5: //clockmaker
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.CLOCK));
-                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0);
                 break;
             default: //court appointment
                 entity.setHeldItem(EnumHand.MAIN_HAND,new ItemStack(Items.DIAMOND));
-                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0,1,2);
+                Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0);
                 break;
         }
         return profession;
@@ -108,6 +118,31 @@ public class Citizens {
         return houses[(int)Math.floor((entity.posZ-z)/16)];
 
 
+    }
+    public static String getHouseTypeFromCurrentCoords(int xpos,int zpos, int kingdomNo)
+    {
+        String pref = DimensionManager.getCurrentSaveRootDirectory() + "/WalledKingdoms/"+kingdomNo+"/";
+        List<String> layout = readLines(pref+"layout.wk");
+        List<String> politics = readLines(pref+"politics.wk");
+        int x = Integer.parseInt(politics.get(3));
+        int z = Integer.parseInt(politics.get(4));
+
+        String[] houses = layout.get((int)Math.floor((xpos-x)/16)).split(",");
+
+        return houses[(int)Math.floor((zpos-z)/16)];
+
+
+    }
+
+    public static BlockPos getExactHouseCoords(int xpos,int ypos,int zpos, int kingdomNo)
+    {
+        String pref = DimensionManager.getCurrentSaveRootDirectory() + "/WalledKingdoms/"+kingdomNo+"/";
+        List<String> layout = readLines(pref+"layout.wk");
+        List<String> politics = readLines(pref+"politics.wk");
+        int x = Integer.parseInt(politics.get(3));
+        int z = Integer.parseInt(politics.get(4));
+
+        return new BlockPos(Math.floor((xpos-x)/16)*16+x,ypos-1,(Math.floor((zpos-z)/16)*16+z));
     }
 
     public static String getProfessionNameFromItem(Item item,boolean onlyKeepers)
