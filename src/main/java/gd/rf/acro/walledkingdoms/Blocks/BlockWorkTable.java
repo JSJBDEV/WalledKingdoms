@@ -62,11 +62,14 @@ public class BlockWorkTable extends BlockBase {
     }
 
     private static void processButcher(EntityPlayer player) {
-        if(player.getHeldItem(EnumHand.MAIN_HAND).getItem()== ModItems.butchersKnife)
+        ItemStack ingredientStack = player.getHeldItem(EnumHand.OFF_HAND);
+        Item ToolItem = player.getHeldItem(EnumHand.MAIN_HAND).getItem();
+
+        if(ToolItem.equals(ModItems.butchersKnife))
         {
-            if(player.getHeldItem(EnumHand.OFF_HAND).equals(new ItemStack(Items.IRON_NUGGET, 4)))
+            if(ingredientStack.getItem().equals(ModItems.carcassChicken))
             {
-                player.setHeldItem(EnumHand.OFF_HAND,new ItemStack(ModItems.ringbase));
+                directRecipe(Items.CHICKEN, 1, player, ingredientStack, 1);
             }
         }
 
@@ -98,7 +101,7 @@ public class BlockWorkTable extends BlockBase {
             //New generic return using directRecipe in Utils
             if(ingredientStack.getItem().equals(Items.IRON_NUGGET))
             {
-                directRecipe(player, ingredientStack, 4, ModItems.ringbase, 1);
+                directRecipe(ModItems.ringbase, 1, player, ingredientStack, 4);
             }
         }
 

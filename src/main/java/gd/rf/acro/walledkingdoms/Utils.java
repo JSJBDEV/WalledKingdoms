@@ -233,7 +233,7 @@ public class Utils {
     }
 
     //Takes an input Itemstack, removes items from it and adds a new stack to the player's inventory
-    public static void directRecipe(EntityPlayer player, ItemStack ingredient, int amount, Item resultStack, int returnAmount) {
+    public static void directRecipe(Item resultStack, int returnAmount, EntityPlayer player, ItemStack ingredient, int amount) {
         if(ingredient.getCount()>amount)
         {
             ingredient.setCount(ingredient.getCount()-amount);
@@ -244,6 +244,27 @@ public class Utils {
         {
             player.inventory.deleteStack(ingredient);
             player.addItemStackToInventory(new ItemStack(resultStack, returnAmount));
+        }
+    }
+    //Alternative version for recipes with multiple returns
+    public static void directRecipe(Item[] resultStack, int[] returnAmount, EntityPlayer player, ItemStack ingredient, int amount) {
+        if(ingredient.getCount()>amount)
+        {
+            ingredient.setCount(ingredient.getCount()-amount);
+            for(int i=0; i<resultStack.length;i++)
+            {
+                player.addItemStackToInventory(new ItemStack(resultStack[i], returnAmount[i]));
+            }
+
+        }
+
+        if(ingredient.getCount()==amount)
+        {
+            player.inventory.deleteStack(ingredient);
+            for(int i=0; i<resultStack.length;i++)
+            {
+                player.addItemStackToInventory(new ItemStack(resultStack[i], returnAmount[i]));
+            }
         }
     }
 
