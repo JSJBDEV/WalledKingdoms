@@ -2,16 +2,21 @@ package gd.rf.acro.walledkingdoms;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.entity.projectile.EntityTippedArrow;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemWrittenBook;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.nbt.NBTTagString;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.Mirror;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Rotation;
@@ -23,6 +28,8 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.gen.structure.template.PlacementSettings;
 import net.minecraft.world.gen.structure.template.Template;
 import net.minecraft.world.gen.structure.template.TemplateManager;
+import net.minecraft.world.storage.loot.LootContext;
+import net.minecraft.world.storage.loot.LootTable;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.RandomUtils;
@@ -37,6 +44,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Utils {
 
@@ -222,6 +230,21 @@ public class Utils {
         tags.setTag("pages",contents);
         book.setTagCompound(tags);
         return book;
+    }
+
+    //Takes an input Itemstack, removes items from it and adds a new stack to the player's inventory
+    public static void directRecipe(EntityPlayer player, ItemStack ingredient, int amount, Item resultStack, int returnAmount) {
+        if(ingredient.getCount()>amount)
+        {
+            ingredient.setCount(ingredient.getCount()-amount);
+            player.addItemStackToInventory(new ItemStack(resultStack, returnAmount));
+        }
+
+        if(ingredient.getCount()==amount)
+        {
+            player.inventory.deleteStack(ingredient);
+            player.addItemStackToInventory(new ItemStack(resultStack, returnAmount));
+        }
     }
 
 

@@ -3,6 +3,8 @@ package gd.rf.acro.walledkingdoms.Blocks;
 import gd.rf.acro.walledkingdoms.Citizens.Citizens;
 import gd.rf.acro.walledkingdoms.Citizens.EntityCitizenPassive;
 import gd.rf.acro.walledkingdoms.Items.ModItems;
+import gd.rf.acro.walledkingdoms.WalledKingdoms;
+import gd.rf.acro.walledkingdoms.Utils;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,6 +18,9 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
+
+import static gd.rf.acro.walledkingdoms.Utils.directRecipe;
+
 
 public class BlockWorkTable extends BlockBase {
 
@@ -57,6 +62,13 @@ public class BlockWorkTable extends BlockBase {
     }
 
     private static void processButcher(EntityPlayer player) {
+        if(player.getHeldItem(EnumHand.MAIN_HAND).getItem()== ModItems.butchersKnife)
+        {
+            if(player.getHeldItem(EnumHand.OFF_HAND).equals(new ItemStack(Items.IRON_NUGGET, 4)))
+            {
+                player.setHeldItem(EnumHand.OFF_HAND,new ItemStack(ModItems.ringbase));
+            }
+        }
 
     }
 
@@ -73,11 +85,20 @@ public class BlockWorkTable extends BlockBase {
     }
 
     private static void processGoldsmith(EntityPlayer player) {
-        if(player.getHeldItem(EnumHand.MAIN_HAND).getItem()== ModItems.goldsmith)
+        ItemStack ingredientStack = player.getHeldItem(EnumHand.OFF_HAND);
+        Item ToolItem = player.getHeldItem(EnumHand.MAIN_HAND).getItem();
+
+        if(ToolItem.equals(ModItems.goldsmith))
         {
-            if(player.getHeldItem(EnumHand.OFF_HAND).equals(new ItemStack(Items.IRON_NUGGET, 4)))
+            /**if(player.getHeldItem(EnumHand.OFF_HAND).equals(new ItemStack(Items.IRON_NUGGET, 4)))
             {
                 player.setHeldItem(EnumHand.OFF_HAND,new ItemStack(ModItems.ringbase));
+            }*/
+
+            //New generic return using directRecipe in Utils
+            if(ingredientStack.getItem().equals(Items.IRON_NUGGET))
+            {
+                directRecipe(player, ingredientStack, 4, ModItems.ringbase, 1);
             }
         }
 

@@ -25,7 +25,7 @@ public class ModItems {
     public static ItemBase carcassDonkey = new ItemBase("carcass_donkey");
     public static ItemBase animalFat = new ItemBase("animal_fat");
 
-    public static ButchersKnife butchersKnife = new ButchersKnife("butchers_knife");
+    public static ItemLevelableTool butchersKnife = new ItemLevelableTool("butchers_knife");
 
     //Food Items for Baker
     public static ItemBase flourWheat = new ItemBase("flour_wheat");
