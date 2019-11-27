@@ -23,6 +23,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.apache.commons.lang3.RandomUtils;
 
 import java.util.List;
 
@@ -134,7 +135,7 @@ public class EntityCitizenPassive extends EntityMob {
     public void maintainCurrentHouse() {
         NBTTagCompound tags = this.getHeldItem(EnumHand.MAIN_HAND).getTagCompound();
         String house = Citizens.getHouseTypeFromCurrentCoords((int) this.posX, (int) this.posZ, tags.getInteger("kingno"));
-        BlockPos exact = Citizens.getExactHouseCoords((int) this.posX,tags.getInteger("homey"),(int) this.posZ,tags.getInteger("kingno"));
+        BlockPos exact = Citizens.getExactHouseCoords((int) this.posX, tags.getInteger("homey"), (int) this.posZ, tags.getInteger("kingno"));
         if (house.substring(0, 1).equals("+")) {
             house = house.substring(1);
             Utils.loadStructure(exact, this.world, house, Mirror.LEFT_RIGHT, Rotation.CLOCKWISE_90, true);

@@ -41,6 +41,8 @@ public class ModItems {
     public static ItemBase plateSilver = new ItemBase("plate_silver");
     public static ItemBase chaliceGold = new ItemBase("chalice_gold");
     public static ItemBase chaliceSilver = new ItemBase("chalice_silver");
+    public static ItemLevelableTool goldsmith = new ItemLevelableTool("goldsmith");
+    public static ItemBase ringbase = new ItemBase("ring_base");
 
     //Trinket Items
     public static ItemTrinket circletEnder = new ItemTrinket("circlet_enderpearl");
@@ -58,7 +60,7 @@ public class ModItems {
 
             //Vanity items for goldsmith/silversmith
             ringGold,ringEmerald,ringDiamond,ringEnder,ceremonialBlade,candlestick,plateGold,plateSilver,chaliceGold,
-            chaliceSilver,
+            chaliceSilver,goldsmith,ringbase,
 
             //Trinket Items
             circletEnder
@@ -100,6 +102,8 @@ public class ModItems {
         plateSilver.registerItemModel();
         chaliceGold.registerItemModel();
         chaliceSilver.registerItemModel();
+        goldsmith.registerItemModel();
+        ringbase.registerItemModel();
 
         //Trinket Items
         circletEnder.registerItemModel();
