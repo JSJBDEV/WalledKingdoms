@@ -1,14 +1,19 @@
 package gd.rf.acro.walledkingdoms.Items;
 
 import gd.rf.acro.walledkingdoms.WalledKingdoms;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
+import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.registries.IForgeRegistry;
 
 /**
  * Created by Acro on 15/08/2018.
  */
 public class ModItems {
+    //Potion Effect setup for 15 seconds of hunger I
+    private static PotionEffect hunger15s = new PotionEffect(MobEffects.HUNGER, 300);
+
     public static ItemBase mineCharm = new ItemBase("mine_charm");
     public static StoryBook story = new StoryBook("story");
     public static ItemBow bow = new ItemBow("bow");
@@ -26,9 +31,9 @@ public class ModItems {
     public static ItemBase animalFat = new ItemBase("animal_fat");
 
     //Meats for butcher
-    public static ItemModFood chickenDrumstick = new ItemModFood("chicken_drumstick", 2, 0.3f, true);
-    public static ItemModFood chickenWing = new ItemModFood("chicken_wing", 1, 0.2f, true);
-    public static ItemModFood chickenBreast = new ItemModFood("chicken_breast", 2, 0.4f, true);
+    public static ItemModFood chickenDrumstick = new ItemModFood("chicken_drumstick", 2, 0.3f, true, hunger15s, 0.4f);
+    public static ItemModFood chickenWing = new ItemModFood("chicken_wing", 1, 0.2f, true, hunger15s, 0.4f);
+    public static ItemModFood chickenBreast = new ItemModFood("chicken_breast", 2, 0.4f, true, hunger15s, 0.4f);
 
     public static ItemLevelableTool butchersKnife = new ItemLevelableTool("butchers_knife");
 
