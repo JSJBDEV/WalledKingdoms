@@ -2,6 +2,7 @@
 
 tile.stone_brick.name=Bricks Of Stone
 tile.painter.name=Penguin Painter
+tile.worktable.name=Worktable
 
 item.mine_charm.name=True Adventurers Charm
 
