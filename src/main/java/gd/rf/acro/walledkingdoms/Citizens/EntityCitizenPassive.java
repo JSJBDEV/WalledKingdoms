@@ -35,7 +35,7 @@ public class EntityCitizenPassive extends EntityMob {
 
     public EntityCitizenPassive(World world) {
         super(world);
-        setCanPickUpLoot(true);
+        setCanPickUpLoot(false);
         setDropItemsWhenDead(false);
     }
 
