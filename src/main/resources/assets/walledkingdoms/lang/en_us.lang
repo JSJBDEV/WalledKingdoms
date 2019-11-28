@@ -27,6 +27,10 @@ item.carcass_squid.name=Squid Carcass
 item.carcass_donkey.name=Donkey Carcass
 item.animal_fat.name=Animal Fat
 
+item.chicken_breast.name=Raw Chicken Breast
+item.chicken_drumstick.name=Raw Chicken Drumstick
+item.chicken_wing.name=Raw Chicken Wing
+
 item.butchers_knife.name=Butcher's Knife
 
 item.flour_wheat.name=Wheat Flour

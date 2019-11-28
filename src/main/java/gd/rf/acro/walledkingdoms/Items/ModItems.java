@@ -25,6 +25,11 @@ public class ModItems {
     public static ItemBase carcassDonkey = new ItemBase("carcass_donkey");
     public static ItemBase animalFat = new ItemBase("animal_fat");
 
+    //Meats for butcher
+    public static ItemModFood chickenDrumstick = new ItemModFood("chicken_drumstick", 2, 0.3f, true);
+    public static ItemModFood chickenWing = new ItemModFood("chicken_wing", 1, 0.2f, true);
+    public static ItemModFood chickenBreast = new ItemModFood("chicken_breast", 2, 0.4f, true);
+
     public static ItemLevelableTool butchersKnife = new ItemLevelableTool("butchers_knife");
 
     //Food Items for Baker
@@ -56,6 +61,9 @@ public class ModItems {
             //Carcass Items for Butcher
             carcassChicken, carcassCow,carcassHorse, carcassPig, carcassRabbit, carcassSheep, carcassSquid, carcassDonkey,
             animalFat,
+
+            //Meat Items for Butcher
+            chickenBreast, chickenDrumstick, chickenWing,
 
             butchersKnife,
 
@@ -89,6 +97,10 @@ public class ModItems {
         carcassSquid.registerItemModel();
         carcassDonkey.registerItemModel();
         animalFat.registerItemModel();
+
+        chickenBreast.registerItemModel();
+        chickenDrumstick.registerItemModel();
+        chickenWing.registerItemModel();
 
         butchersKnife.registerItemModel();
 
