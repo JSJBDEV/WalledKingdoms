@@ -1,7 +1,6 @@
 package gd.rf.acro.walledkingdoms.Items;
 
 import gd.rf.acro.walledkingdoms.WalledKingdoms;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemFood;
 import net.minecraft.potion.PotionEffect;
 
