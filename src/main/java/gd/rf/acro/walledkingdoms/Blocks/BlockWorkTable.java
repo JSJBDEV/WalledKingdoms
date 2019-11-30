@@ -3,8 +3,6 @@ package gd.rf.acro.walledkingdoms.Blocks;
 import gd.rf.acro.walledkingdoms.Citizens.Citizens;
 import gd.rf.acro.walledkingdoms.Citizens.EntityCitizenPassive;
 import gd.rf.acro.walledkingdoms.Items.ModItems;
-import gd.rf.acro.walledkingdoms.WalledKingdoms;
-import gd.rf.acro.walledkingdoms.Utils;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -84,11 +82,21 @@ public class BlockWorkTable extends BlockBase {
     }
 
     private static void processClockmaker(EntityPlayer player) {
+        ItemStack ingredientStack = player.getHeldItem(EnumHand.OFF_HAND);
+        Item ToolItem = player.getHeldItem(EnumHand.MAIN_HAND).getItem();
 
+        if(ToolItem.equals(ModItems.clockmakersTools))
+        {
+        }
     }
 
     private static void processBlacksmith(EntityPlayer player) {
+        ItemStack ingredientStack = player.getHeldItem(EnumHand.OFF_HAND);
+        Item ToolItem = player.getHeldItem(EnumHand.MAIN_HAND).getItem();
 
+        if(ToolItem.equals(ModItems.smithsHammer))
+        {
+        }
     }
 
     private static void processGoldsmith(EntityPlayer player) {

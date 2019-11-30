@@ -42,6 +42,12 @@ public class ModItems {
     public static ItemModFood stewBeef = new ItemModFood("stew_beef",8,13.0f ,false);
     public static ItemModFood pancakes = new ItemModFood("pancakes",4,2.0f ,false);
 
+    //Items for clockmaker
+    public static ItemLevelableTool clockmakersTools = new ItemLevelableTool("clockmakers_tools");
+
+    //Items for Blacksmith
+    public static ItemLevelableTool smithsHammer = new ItemLevelableTool("smiths_hammer");
+
     //Vanity items for goldsmith/silversmith
     public static ItemBase ringGold = new ItemBase("ring_gold");
     public static ItemBase ringEmerald = new ItemBase("ring_emerald");
@@ -74,6 +80,12 @@ public class ModItems {
 
             //Food Items for Baker
             flourWheat, stewBeef, pancakes,
+
+            //Items for Clockmaker
+            clockmakersTools,
+
+            //Items for Blacksmith
+            smithsHammer,
 
             //Vanity items for goldsmith/silversmith
             ringGold,ringEmerald,ringDiamond,ringEnder,ceremonialBlade,candlestick,plateGold,plateSilver,chaliceGold,
@@ -113,6 +125,12 @@ public class ModItems {
         flourWheat.registerItemModel();
         stewBeef.registerItemModel();
         pancakes.registerItemModel();
+
+        //Items for clockmaker
+        clockmakersTools.registerItemModel();
+
+        //Items for blacksmith
+        smithsHammer.registerItemModel();
 
         //Vanity items for goldsmith/silversmith
         ringGold.registerItemModel();
