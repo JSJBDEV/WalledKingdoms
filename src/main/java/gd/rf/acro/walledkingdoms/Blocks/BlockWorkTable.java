@@ -78,7 +78,12 @@ public class BlockWorkTable extends BlockBase {
     }
 
     private static void processBaker(EntityPlayer player) {
+        ItemStack ingredientStack = player.getHeldItem(EnumHand.OFF_HAND);
+        Item ToolItem = player.getHeldItem(EnumHand.MAIN_HAND).getItem();
 
+        if(ToolItem.equals(ModItems.bakingUtensils))
+        {
+        }
     }
 
     private static void processClockmaker(EntityPlayer player) {
@@ -105,12 +110,6 @@ public class BlockWorkTable extends BlockBase {
 
         if(ToolItem.equals(ModItems.goldsmith))
         {
-            /**if(player.getHeldItem(EnumHand.OFF_HAND).equals(new ItemStack(Items.IRON_NUGGET, 4)))
-            {
-                player.setHeldItem(EnumHand.OFF_HAND,new ItemStack(ModItems.ringbase));
-            }*/
-
-            //New generic return using directRecipe in Utils
             if(ingredientStack.getItem().equals(Items.IRON_NUGGET))
             {
                 directRecipe(ModItems.ringbase, 1, player, ingredientStack, 4);

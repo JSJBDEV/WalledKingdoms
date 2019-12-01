@@ -19,7 +19,7 @@ public class ModItems {
     public static ItemBow bow = new ItemBow("bow");
     public static ItemDebug debug = new ItemDebug("debug");
 
-    //Carcass Items for butcher
+    //Carcass Items
     public static ItemBase carcassCow = new ItemBase("carcass_cow");
     public static ItemBase carcassPig = new ItemBase("carcass_pig");
     public static ItemBase carcassSheep = new ItemBase("carcass_sheep");
@@ -30,14 +30,14 @@ public class ModItems {
     public static ItemBase carcassDonkey = new ItemBase("carcass_donkey");
     public static ItemBase animalFat = new ItemBase("animal_fat");
 
-    //Meats for butcher
+    //Items for butcher
     public static ItemModFood chickenDrumstick = new ItemModFood("chicken_drumstick", 2, 0.3f, true, hunger15s, 0.4f);
     public static ItemModFood chickenWing = new ItemModFood("chicken_wing", 1, 0.2f, true, hunger15s, 0.4f);
     public static ItemModFood chickenBreast = new ItemModFood("chicken_breast", 2, 0.4f, true, hunger15s, 0.4f);
-
     public static ItemLevelableTool butchersKnife = new ItemLevelableTool("butchers_knife");
 
-    //Food Items for Baker
+    //Items for Baker
+    public static ItemLevelableTool bakingUtensils = new ItemLevelableTool("baking_utensils");
     public static ItemBase flourWheat = new ItemBase("flour_wheat");
     public static ItemModFood stewBeef = new ItemModFood("stew_beef",8,13.0f ,false);
     public static ItemModFood pancakes = new ItemModFood("pancakes",4,2.0f ,false);
@@ -48,7 +48,7 @@ public class ModItems {
     //Items for Blacksmith
     public static ItemLevelableTool smithsHammer = new ItemLevelableTool("smiths_hammer");
 
-    //Vanity items for goldsmith/silversmith
+    //Items for goldsmith/silversmith
     public static ItemBase ringGold = new ItemBase("ring_gold");
     public static ItemBase ringEmerald = new ItemBase("ring_emerald");
     public static ItemBase ringDiamond = new ItemBase("ring_diamond");
@@ -69,16 +69,16 @@ public class ModItems {
         registry.registerAll(
             mineCharm,story,bow,debug,
 
-            //Carcass Items for Butcher
+            //Carcass Items
             carcassChicken, carcassCow,carcassHorse, carcassPig, carcassRabbit, carcassSheep, carcassSquid, carcassDonkey,
             animalFat,
 
-            //Meat Items for Butcher
+            //Items for Butcher
+            butchersKnife,
             chickenBreast, chickenDrumstick, chickenWing,
 
-            butchersKnife,
-
-            //Food Items for Baker
+            //Items for Baker
+            bakingUtensils,
             flourWheat, stewBeef, pancakes,
 
             //Items for Clockmaker
@@ -88,8 +88,11 @@ public class ModItems {
             smithsHammer,
 
             //Vanity items for goldsmith/silversmith
-            ringGold,ringEmerald,ringDiamond,ringEnder,ceremonialBlade,candlestick,plateGold,plateSilver,chaliceGold,
-            chaliceSilver,goldsmith,ringbase,
+            goldsmith,
+            ringGold,ringEmerald,ringDiamond,ringEnder,ringbase,
+            ceremonialBlade,candlestick,
+            plateGold,plateSilver,chaliceGold,
+            chaliceSilver,
 
             //Trinket Items
             circletEnder
@@ -104,7 +107,7 @@ public class ModItems {
         bow.registerItemModel();
         debug.registerItemModel();
 
-        //Carcass Items for Butcher
+        //Carcass Items
         carcassChicken.registerItemModel();
         carcassCow.registerItemModel();
         carcassHorse.registerItemModel();
@@ -115,13 +118,14 @@ public class ModItems {
         carcassDonkey.registerItemModel();
         animalFat.registerItemModel();
 
+        //Items for Butcher
+        butchersKnife.registerItemModel();
         chickenBreast.registerItemModel();
         chickenDrumstick.registerItemModel();
         chickenWing.registerItemModel();
 
-        butchersKnife.registerItemModel();
-
-        //Food Items for Baker
+        //Items for Baker
+        bakingUtensils.registerItemModel();
         flourWheat.registerItemModel();
         stewBeef.registerItemModel();
         pancakes.registerItemModel();
@@ -132,7 +136,8 @@ public class ModItems {
         //Items for blacksmith
         smithsHammer.registerItemModel();
 
-        //Vanity items for goldsmith/silversmith
+        //Items for goldsmith/silversmith
+        goldsmith.registerItemModel();
         ringGold.registerItemModel();
         ringEmerald.registerItemModel();
         ringDiamond.registerItemModel();
@@ -143,7 +148,6 @@ public class ModItems {
         plateSilver.registerItemModel();
         chaliceGold.registerItemModel();
         chaliceSilver.registerItemModel();
-        goldsmith.registerItemModel();
         ringbase.registerItemModel();
 
         //Trinket Items
