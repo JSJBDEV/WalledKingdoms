@@ -36,9 +36,15 @@ public class BlockWorkTable extends BlockBase {
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing_6_, float p_onBlockActivated_7_, float p_onBlockActivated_8_, float p_onBlockActivated_9_) {
         if(!world.isRemote && hand.equals(EnumHand.MAIN_HAND)) {
-            EntityCitizenPassive citizen = world.getEntitiesWithinAABB(EntityCitizenPassive.class, new AxisAlignedBB(pos.add(-5, -5, -5), pos.add(5, 5, 5))).get(0);
-            Item item = citizen.getHeldItem(EnumHand.MAIN_HAND).getItem();
-            player.sendMessage(new TextComponentString("This Worktable is currently manned by " + citizen.getCustomNameTag() + ", they are a " + Citizens.getProfessionNameFromItem(item, true)));
+            Item item;
+            try {
+                EntityCitizenPassive citizen = world.getEntitiesWithinAABB(EntityCitizenPassive.class, new AxisAlignedBB(pos.add(-5, -5, -5), pos.add(5, 5, 5))).get(0);
+                item = citizen.getHeldItem(EnumHand.MAIN_HAND).getItem();
+                player.sendMessage(new TextComponentString("This Worktable is currently manned by " + citizen.getCustomNameTag() + ", they are a " + Citizens.getProfessionNameFromItem(item, true)));
+            }
+            catch(Exception e) {
+                item = Item.getItemFromBlock(Blocks.FIRE);
+            }
 
             if (item == Items.PORKCHOP) {
                 processButcher(player);
@@ -55,7 +61,6 @@ public class BlockWorkTable extends BlockBase {
             if (item == Items.GOLD_INGOT) {
                 processGoldsmith(player);
             }
-
         }
 
         return super.onBlockActivated(world, pos, state, player, hand, facing_6_, p_onBlockActivated_7_, p_onBlockActivated_8_, p_onBlockActivated_9_);
