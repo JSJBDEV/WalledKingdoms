@@ -34,6 +34,9 @@ public class ModItems {
     public static ItemModFood chickenDrumstick = new ItemModFood("chicken_drumstick", 2, 0.3f, true, hunger15s, 0.4f);
     public static ItemModFood chickenWing = new ItemModFood("chicken_wing", 1, 0.2f, true, hunger15s, 0.4f);
     public static ItemModFood chickenBreast = new ItemModFood("chicken_breast", 2, 0.4f, true, hunger15s, 0.4f);
+    public static ItemModFood beefMince = new ItemModFood("beef_mince", 3, 0.4f, true, hunger15s, 0.4f);
+    public static ItemModFood lambMince = new ItemModFood("lamb_mince", 3, 0.4f, true, hunger15s, 0.4f);
+    public static ItemModFood porkMince = new ItemModFood("pork_mince", 3, 0.4f, true, hunger15s, 0.4f);
     public static ItemLevelableTool butchersKnife = new ItemLevelableTool("butchers_knife");
 
     //Items for Baker
@@ -76,6 +79,7 @@ public class ModItems {
             //Items for Butcher
             butchersKnife,
             chickenBreast, chickenDrumstick, chickenWing,
+            beefMince, lambMince, porkMince,
 
             //Items for Baker
             bakingUtensils,
@@ -123,6 +127,9 @@ public class ModItems {
         chickenBreast.registerItemModel();
         chickenDrumstick.registerItemModel();
         chickenWing.registerItemModel();
+        beefMince.registerItemModel();
+        lambMince.registerItemModel();
+        porkMince.registerItemModel();
 
         //Items for Baker
         bakingUtensils.registerItemModel();

@@ -78,9 +78,60 @@ public class BlockWorkTable extends BlockBase {
                 int[] returnAmounts = {2,2,2};
                 directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
             }
+
+            if(ingredientStack.getItem().equals(ModItems.carcassCow))
+            {
+                Item[] returnItems = {ModItems.beefMince};
+                int[] returnAmounts = {3};
+                directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
+            }
+
+            if(ingredientStack.getItem().equals(ModItems.carcassDonkey))
+            {
+                Item[] returnItems = {ModItems.beefMince};
+                int[] returnAmounts = {2};
+                directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
+            }
+
+            if(ingredientStack.getItem().equals(ModItems.carcassHorse))
+            {
+                Item[] returnItems = {ModItems.beefMince};
+                int[] returnAmounts = {3};
+                directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
+            }
+
+            if(ingredientStack.getItem().equals(ModItems.carcassPig))
+            {
+                Item[] returnItems = {ModItems.porkMince};
+                int[] returnAmounts = {2};
+                directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
+            }
+
+            if(ingredientStack.getItem().equals(ModItems.carcassRabbit))
+            {
+                Item[] returnItems = {};
+                int[] returnAmounts = {};
+                directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
+            }
+
+            if(ingredientStack.getItem().equals(ModItems.carcassSheep))
+            {
+                Item[] returnItems = {ModItems.lambMince};
+                int[] returnAmounts = {2};
+                directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
+            }
+
+            if(ingredientStack.getItem().equals(ModItems.carcassSquid))
+            {
+                Item[] returnItems = {};
+                int[] returnAmounts = {};
+                directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
+            }
         }
 
     }
+
+
 
     private static void processBaker(EntityPlayer player) {
         ItemStack ingredientStack = player.getHeldItem(EnumHand.OFF_HAND);
