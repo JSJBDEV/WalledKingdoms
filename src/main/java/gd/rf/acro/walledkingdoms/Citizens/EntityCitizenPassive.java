@@ -86,7 +86,7 @@ public class EntityCitizenPassive extends EntityMob {
         if (!this.hasCustomName()) {
             this.setCustomNameTag(genName(5));
         }
-        if (!this.world.isRemote) {
+        if (!this.world.isRemote && hand.equals(EnumHand.MAIN_HAND)) {
             player.sendMessage(new TextComponentString("<" + this.getCustomNameTag() + "> " + "Hello " + player.getName() + "!"));
 
         }

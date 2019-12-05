@@ -2,6 +2,7 @@
 
 tile.stone_brick.name=Bricks Of Stone
 tile.painter.name=Penguin Painter
+tile.worktable.name=Worktable
 
 item.mine_charm.name=True Adventurers Charm
 
@@ -26,6 +27,18 @@ item.carcass_sheep.name=Sheep Carcass
 item.carcass_squid.name=Squid Carcass
 item.carcass_donkey.name=Donkey Carcass
 item.animal_fat.name=Animal Fat
+
+item.chicken_breast.name=Raw Chicken Breast
+item.chicken_drumstick.name=Raw Chicken Drumstick
+item.chicken_wing.name=Raw Chicken Wing
+item.beef_mince.name=Beef Mince
+item.lamb_mince.name=Lamb Mince
+item.pork_mince.name=Pork Mince
+
+item.butchers_knife.name=Butcher's Knife
+item.smiths_hammer.name=Blacksmith's Hammer
+item.clockmakers_tools.name=Clockmaker's Tools
+item.baking_utensils.name=Baking Utensils
 
 item.flour_wheat.name=Wheat Flour
 item.stew_beef.name=Beef Stew

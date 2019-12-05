@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "walledkingdoms:carcass_cow"
+        }
+    ],
+    "result": {
+        "item": "minecraft:beef"
+    }
+}

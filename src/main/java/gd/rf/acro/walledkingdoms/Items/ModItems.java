@@ -1,20 +1,25 @@
 package gd.rf.acro.walledkingdoms.Items;
 
 import gd.rf.acro.walledkingdoms.WalledKingdoms;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
+import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.registries.IForgeRegistry;
 
 /**
  * Created by Acro on 15/08/2018.
  */
 public class ModItems {
+    //Potion Effect setup for 15 seconds of hunger I
+    private static PotionEffect hunger15s = new PotionEffect(MobEffects.HUNGER, 300);
+
     public static ItemBase mineCharm = new ItemBase("mine_charm");
     public static StoryBook story = new StoryBook("story");
     public static ItemBow bow = new ItemBow("bow");
     public static ItemDebug debug = new ItemDebug("debug");
 
-    //Carcass Items for butcher
+    //Carcass Items
     public static ItemBase carcassCow = new ItemBase("carcass_cow");
     public static ItemBase carcassPig = new ItemBase("carcass_pig");
     public static ItemBase carcassSheep = new ItemBase("carcass_sheep");
@@ -25,12 +30,28 @@ public class ModItems {
     public static ItemBase carcassDonkey = new ItemBase("carcass_donkey");
     public static ItemBase animalFat = new ItemBase("animal_fat");
 
-    //Food Items for Baker
+    //Items for butcher
+    public static ItemModFood chickenDrumstick = new ItemModFood("chicken_drumstick", 2, 0.3f, true, hunger15s, 0.4f);
+    public static ItemModFood chickenWing = new ItemModFood("chicken_wing", 1, 0.2f, true, hunger15s, 0.4f);
+    public static ItemModFood chickenBreast = new ItemModFood("chicken_breast", 2, 0.4f, true, hunger15s, 0.4f);
+    public static ItemModFood beefMince = new ItemModFood("beef_mince", 3, 0.4f, true, hunger15s, 0.4f);
+    public static ItemModFood lambMince = new ItemModFood("lamb_mince", 3, 0.4f, true, hunger15s, 0.4f);
+    public static ItemModFood porkMince = new ItemModFood("pork_mince", 3, 0.4f, true, hunger15s, 0.4f);
+    public static ItemLevelableTool butchersKnife = new ItemLevelableTool("butchers_knife");
+
+    //Items for Baker
+    public static ItemLevelableTool bakingUtensils = new ItemLevelableTool("baking_utensils");
     public static ItemBase flourWheat = new ItemBase("flour_wheat");
     public static ItemModFood stewBeef = new ItemModFood("stew_beef",8,13.0f ,false);
     public static ItemModFood pancakes = new ItemModFood("pancakes",4,2.0f ,false);
 
-    //Vanity items for goldsmith/silversmith
+    //Items for clockmaker
+    public static ItemLevelableTool clockmakersTools = new ItemLevelableTool("clockmakers_tools");
+
+    //Items for Blacksmith
+    public static ItemLevelableTool smithsHammer = new ItemLevelableTool("smiths_hammer");
+
+    //Items for goldsmith/silversmith
     public static ItemBase ringGold = new ItemBase("ring_gold");
     public static ItemBase ringEmerald = new ItemBase("ring_emerald");
     public static ItemBase ringDiamond = new ItemBase("ring_diamond");
@@ -51,16 +72,31 @@ public class ModItems {
         registry.registerAll(
             mineCharm,story,bow,debug,
 
-            //Carcass Items for Butcher
+            //Carcass Items
             carcassChicken, carcassCow,carcassHorse, carcassPig, carcassRabbit, carcassSheep, carcassSquid, carcassDonkey,
             animalFat,
 
-            //Food Items for Baker
+            //Items for Butcher
+            butchersKnife,
+            chickenBreast, chickenDrumstick, chickenWing,
+            beefMince, lambMince, porkMince,
+
+            //Items for Baker
+            bakingUtensils,
             flourWheat, stewBeef, pancakes,
 
+            //Items for Clockmaker
+            clockmakersTools,
+
+            //Items for Blacksmith
+            smithsHammer,
+
             //Vanity items for goldsmith/silversmith
-            ringGold,ringEmerald,ringDiamond,ringEnder,ceremonialBlade,candlestick,plateGold,plateSilver,chaliceGold,
-            chaliceSilver,goldsmith,ringbase,
+            goldsmith,
+            ringGold,ringEmerald,ringDiamond,ringEnder,ringbase,
+            ceremonialBlade,candlestick,
+            plateGold,plateSilver,chaliceGold,
+            chaliceSilver,
 
             //Trinket Items
             circletEnder
@@ -75,7 +111,7 @@ public class ModItems {
         bow.registerItemModel();
         debug.registerItemModel();
 
-        //Carcass Items for Butcher
+        //Carcass Items
         carcassChicken.registerItemModel();
         carcassCow.registerItemModel();
         carcassHorse.registerItemModel();
@@ -86,12 +122,29 @@ public class ModItems {
         carcassDonkey.registerItemModel();
         animalFat.registerItemModel();
 
-        //Food Items for Baker
+        //Items for Butcher
+        butchersKnife.registerItemModel();
+        chickenBreast.registerItemModel();
+        chickenDrumstick.registerItemModel();
+        chickenWing.registerItemModel();
+        beefMince.registerItemModel();
+        lambMince.registerItemModel();
+        porkMince.registerItemModel();
+
+        //Items for Baker
+        bakingUtensils.registerItemModel();
         flourWheat.registerItemModel();
         stewBeef.registerItemModel();
         pancakes.registerItemModel();
 
-        //Vanity items for goldsmith/silversmith
+        //Items for clockmaker
+        clockmakersTools.registerItemModel();
+
+        //Items for blacksmith
+        smithsHammer.registerItemModel();
+
+        //Items for goldsmith/silversmith
+        goldsmith.registerItemModel();
         ringGold.registerItemModel();
         ringEmerald.registerItemModel();
         ringDiamond.registerItemModel();
@@ -102,7 +155,6 @@ public class ModItems {
         plateSilver.registerItemModel();
         chaliceGold.registerItemModel();
         chaliceSilver.registerItemModel();
-        goldsmith.registerItemModel();
         ringbase.registerItemModel();
 
         //Trinket Items
