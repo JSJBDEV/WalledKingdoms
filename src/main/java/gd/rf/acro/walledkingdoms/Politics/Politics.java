@@ -17,7 +17,7 @@ public class Politics {
     public static List<String> genImportantInformation(World world)
     {
         List<String> info = new ArrayList<>();
-        info.add("Republic of"); //Government type
+        info.add(genKingdomType()); //Government type
         info.add(genName(4)); //kingdom name
         info.add("0"); //cultural style
 
@@ -54,6 +54,12 @@ public class Politics {
 
         }
         return name;
+    }
+
+    public static String genKingdomType()
+    {
+        String[] types = {"Republic of","Kingdom of","Federation of","Demarchy of"};
+        return types[RandomUtils.nextInt(0,4)];
     }
 
 }
