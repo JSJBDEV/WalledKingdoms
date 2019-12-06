@@ -12,6 +12,6 @@ public class Conviction {
         //the severity weights what the outcome is, higher severity = more likely worse outcome
         World world = player.world;
         Scoreboard scoreboard = world.getScoreboard();
-        scoreboard.getOrCreateScore(player.getCachedUniqueIdString(),scoreboard.getObjective("WK_PlayerConviction")).setScorePoints(days);
+        //scoreboard.getOrCreateScore(player.getCachedUniqueIdString(),scoreboard.getObjective("WK_PlayerConviction")).setScorePoints(days);
     }
 }

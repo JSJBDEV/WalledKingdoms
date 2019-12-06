@@ -13,52 +13,66 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Politics {
-
+    public static final String[] types = {"Republic of","Kingdom of","Federation of","Demarchy of"};
+    public static final String[] residency = {"application","investment","time","employment"};
+    public static final String[] revocable = {"no","crimes","minister"};
+    public static final String[] hgoods = {"residents","free trade","merchants"};
+    public static final String[] lgoods = {"residents","free trade","state rationing"};
+    public static final String[] auctions = {"public","residents","private"};
+    public static final String[] land = {"application","government","auction"};
+    public static final String[] gates = {"Open","Closed","Mercantile"};
+    public static final String[] guards = {"lax","reasonable","thorough"};
     public static List<String> genImportantInformation(World world)
     {
         List<String> info = new ArrayList<>();
 
         //basic information
-        String[] types = {"Republic of","Kingdom of","Federation of","Demarchy of"};
+
         info.add(types[RandomUtils.nextInt(0,types.length-1)]); //Government type
 
         info.add(genName(4)); //kingdom name
         info.add("0"); //cultural style
 
         //actual politics
-        String[] residency = {"application","investment","time","employment"};
         info.add(residency[RandomUtils.nextInt(0,residency.length-1)]); //residency type
-
-        String[] revocable = {"no","crimes","minister"};
         info.add(revocable[RandomUtils.nextInt(0,revocable.length-1)]); //is residency revocable
-
         info.add(RandomUtils.nextInt(5,50)+""); //length of stay without residency
-
-        String[] hgoods = {"residents","free trade","merchants"};
         info.add(hgoods[RandomUtils.nextInt(0,hgoods.length-1)]); //who can buy high value goods
-
-        String[] lgoods = {"residents","free trade","state rationing"};
         info.add(lgoods[RandomUtils.nextInt(0,lgoods.length-1)]); //who can buy low value goods
-
         info.add(""); //trade routes
-
         info.add(""); //routes embargo'd
-
-        String[] auctions = {"public","residents","private"};
         info.add(auctions[RandomUtils.nextInt(0,auctions.length-1)]); //how auctions are partaken
-
-        String[] land = {"application","government","auction"};
         info.add(land[RandomUtils.nextInt(0,land.length-1)]); //how is land assigned
-
-        String[] gates = {"Open","Closed","Mercantile"};
         info.add(gates[RandomUtils.nextInt(0,gates.length-1)]); //are the city gates open
-
-        String[] guards = {"lax","reasonable","thorough"};
         info.add(guards[RandomUtils.nextInt(0,guards.length-1)]); //how frequently do guards check papers
 
         info.add(""+RandomUtils.nextInt(0,64)); //residency tax
         info.add(""+RandomUtils.nextInt(0,101)); //low value tax as a %
         info.add(""+RandomUtils.nextInt(0,101)); //high value tax as a %
+
+        /*
+          0 - type of country
+          1 - country name
+          2 - cultural style
+
+          3 - residency type
+          4 - revocable residency
+          5 - stay without residency
+          6 - high value goods
+          7 - low value goods
+          8 - trade routes
+          9 - embargoed routes
+          10 - auction style
+          11 - land assignment style
+          12 - gate state
+          13 - guard style
+          14 - residency tax
+          15 - low value tax
+          16 - high value tax
+         */
+
+
+
 
         boolean isAcceptableBiome = false;
         int x=0;
