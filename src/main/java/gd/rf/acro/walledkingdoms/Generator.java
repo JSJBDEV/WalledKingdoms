@@ -40,6 +40,9 @@ public class Generator {
                 scoreboard.addScoreObjective("WK_KingdomsInit", ScoreCriteria.DUMMY);
                 scoreboard.getOrCreateScore("world",scoreboard.getObjective("WK_KingdomsInit")).setScorePoints(0);
 
+                //creates persistent information for player conviction
+                scoreboard.addScoreObjective("WK_PlayerConviction",ScoreCriteria.DUMMY);
+
                 //create necessary information and descriptions
                 List<String> politics = genImportantInformation(world);
                 writeLines(politics, pref + "politics.wk");
