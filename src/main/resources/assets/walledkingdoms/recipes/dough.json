@@ -1,0 +1,36 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "walledkingdoms:flour_wheat"
+        },
+        {
+            "item": "walledkingdoms:flour_wheat"
+        },
+        {
+            "item": "walledkingdoms:flour_wheat"
+        },
+        {
+            "item": "walledkingdoms:flour_wheat"
+        },
+        {
+            "item": "walledkingdoms:flour_wheat"
+        },
+        {
+            "item": "walledkingdoms:flour_wheat"
+        },
+        {
+            "item": "walledkingdoms:flour_wheat"
+        },
+        {
+            "item": "walledkingdoms:flour_wheat"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        }
+    ],
+    "result": {
+        "item": "walledkingdoms:dough",
+        "count": 8
+    }
+}
