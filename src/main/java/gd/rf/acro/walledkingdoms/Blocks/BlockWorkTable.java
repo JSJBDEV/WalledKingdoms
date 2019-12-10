@@ -139,6 +139,12 @@ public class BlockWorkTable extends BlockBase {
 
         if(ToolItem.equals(ModItems.bakingUtensils))
         {
+            if(ingredientStack.getItem().equals(Items.WHEAT))
+            {
+                Item[] returnItems = {ModItems.flourWheat};
+                int[] returnAmounts = {1};
+                directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
+            }
         }
     }
 
