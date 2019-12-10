@@ -3,15 +3,21 @@ package gd.rf.acro.walledkingdoms.Politics;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.world.World;
+import net.minecraftforge.common.DimensionManager;
+
+import java.util.List;
+
+import static gd.rf.acro.walledkingdoms.Utils.readLines;
 
 public class Conviction {
 
-    public static void addConviction(EntityPlayer player, int days,int severity)
+    //method is called by command class
+    public static void applyConviction(EntityPlayer player, String crime,int kingdomNo)
     {
-        //a players gains conviction in there city, a timer is set before the outcome is decided
-        //the severity weights what the outcome is, higher severity = more likely worse outcome
-        World world = player.world;
-        Scoreboard scoreboard = world.getScoreboard();
-        //scoreboard.getOrCreateScore(player.getCachedUniqueIdString(),scoreboard.getObjective("WK_PlayerConviction")).setScorePoints(days);
+        String pref = DimensionManager.getCurrentSaveRootDirectory() + "/WalledKingdoms/"+kingdomNo+"/";
+        List<String> politics = readLines(pref+"politics.wk");
+        //when a player is convicted they are assigned a scoreboard value in WK_response that tells the command handler
+        //what the player is allowed to type, with this, the string crime can be assumed to always be valid
+
     }
 }

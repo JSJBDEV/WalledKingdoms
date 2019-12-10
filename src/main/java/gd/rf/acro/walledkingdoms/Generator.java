@@ -1,6 +1,7 @@
 package gd.rf.acro.walledkingdoms;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.scoreboard.Score;
 import net.minecraft.scoreboard.ScoreCriteria;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.Mirror;
@@ -10,6 +11,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.apache.commons.lang3.RandomUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -40,8 +42,7 @@ public class Generator {
                 scoreboard.addScoreObjective("WK_KingdomsInit", ScoreCriteria.DUMMY);
                 scoreboard.getOrCreateScore("world",scoreboard.getObjective("WK_KingdomsInit")).setScorePoints(0);
 
-                //creates persistent information for player conviction
-                scoreboard.addScoreObjective("WK_PlayerConviction",ScoreCriteria.DUMMY);
+                scoreboard.addScoreObjective("WK_Response", ScoreCriteria.DUMMY);
 
                 //create necessary information and descriptions
                 List<String> politics = genImportantInformation(world);
@@ -94,6 +95,8 @@ public class Generator {
 
 
     }
+
+
 
 
 }
