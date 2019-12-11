@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:book"
+        },
+        {
+            "item": "minecraft:emerald"
+        },
+        {
+            "item": "minecraft:map"
+        }
+    ],
+    "result": {
+        "item": "walledkingdoms:story",
+        "count": 1
+    }
+}
