@@ -48,9 +48,9 @@ item.flour_wheat.name=Wheat Flour
 item.stew_beef.name=Beef Stew
 item.pancakes.name=Pancakes
 item.dough.name=Raw Dough
-item.rice_raw=Raw Rice
-item.rice_cooked=Rice
-item.flour_rice=Rice Flour
+item.rice_raw.name=Raw Rice
+item.rice_cooked.name=Rice
+item.flour_rice.name=Rice Flour
 
 item.story.name=Story Book
 
