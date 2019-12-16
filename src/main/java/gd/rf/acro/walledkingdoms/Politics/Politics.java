@@ -27,6 +27,7 @@ public class Politics {
     public static final String[] land = {"application","government","auction"};
     public static final String[] gates = {"Open","Closed","Mercantile"};
     public static final String[] guards = {"lax","reasonable","thorough"};
+    public static final String[] punishments = {"confiscation","banishment","revocation","enemy"};
     public static List<String> genImportantInformation(World world)
     {
         List<String> info = new ArrayList<>();
@@ -55,6 +56,12 @@ public class Politics {
         info.add(""+RandomUtils.nextInt(0,101)); //low value tax as a %
         info.add(""+RandomUtils.nextInt(0,101)); //high value tax as a %
 
+        info.add(punishments[RandomUtils.nextInt(0,punishments.length-1)]); //no-permit
+        info.add(punishments[RandomUtils.nextInt(0,punishments.length-1)]); //vandalism
+        info.add(punishments[RandomUtils.nextInt(0,punishments.length-1)]); //assault
+        info.add(punishments[RandomUtils.nextInt(0,punishments.length-1)]); //murder
+        info.add(punishments[RandomUtils.nextInt(0,punishments.length-1)]); //theft
+
         /*
           0 - type of country
           1 - country name
@@ -74,6 +81,12 @@ public class Politics {
           14 - residency tax
           15 - low value tax
           16 - high value tax
+
+          17 - crime: no permit
+          18 - crime: vandalism
+          19 - crime: assault
+          20 - crime: murder
+          21 - crime: theft
          */
 
 
