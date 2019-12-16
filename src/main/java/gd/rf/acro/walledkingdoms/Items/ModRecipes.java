@@ -10,5 +10,8 @@ public class ModRecipes {
         GameRegistry.addSmelting(ModItems.chickenDrumstick, new ItemStack(ModItems.chickenDrumstickCooked), 0.25f);
         GameRegistry.addSmelting(ModItems.chickenWing, new ItemStack(ModItems.chickenWingCooked), 0.25f);
         GameRegistry.addSmelting(ModItems.dough, new ItemStack(Items.BREAD), 0.20f);
+        GameRegistry.addSmelting(ModItems.riceRaw, new ItemStack(ModItems.riceCooked), 0.20f);
+        GameRegistry.addSmelting(ModItems.horseSteak, new ItemStack(ModItems.horseSteakCooked), 0.25f);
+        GameRegistry.addSmelting(ModItems.tongue, new ItemStack(ModItems.tongueCooked), 0.25f);
     }
 }

@@ -66,6 +66,8 @@ public class BlockWorkTable extends BlockBase {
         return super.onBlockActivated(world, pos, state, player, hand, facing_6_, p_onBlockActivated_7_, p_onBlockActivated_8_, p_onBlockActivated_9_);
     }
 
+
+
     private static void processButcher(EntityPlayer player) {
         ItemStack ingredientStack = player.getHeldItem(EnumHand.OFF_HAND);
         Item ToolItem = player.getHeldItem(EnumHand.MAIN_HAND).getItem();
@@ -95,8 +97,8 @@ public class BlockWorkTable extends BlockBase {
 
             if(ingredientStack.getItem().equals(ModItems.carcassHorse))
             {
-                Item[] returnItems = {ModItems.beefMince};
-                int[] returnAmounts = {3};
+                Item[] returnItems = {ModItems.beefMince, ModItems.tongue, ModItems.horseSteak};
+                int[] returnAmounts = {3, 1, 1};
                 directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
             }
 
@@ -137,10 +139,25 @@ public class BlockWorkTable extends BlockBase {
         ItemStack ingredientStack = player.getHeldItem(EnumHand.OFF_HAND);
         Item ToolItem = player.getHeldItem(EnumHand.MAIN_HAND).getItem();
 
-        if(ToolItem.equals(ModItems.bakingUtensils))
+        if(ToolItem.equals(ModItems.grindStone))
         {
+            if(ingredientStack.getItem().equals(Items.WHEAT))
+            {
+                Item[] returnItems = {ModItems.flourWheat};
+                int[] returnAmounts = {1};
+                directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
+            }
+
+            if(ingredientStack.getItem().equals(ModItems.riceRaw))
+            {
+                Item[] returnItems = {ModItems.flourRice};
+                int[] returnAmounts = {1};
+                directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
+            }
         }
     }
+
+
 
     private static void processClockmaker(EntityPlayer player) {
         ItemStack ingredientStack = player.getHeldItem(EnumHand.OFF_HAND);
@@ -151,6 +168,8 @@ public class BlockWorkTable extends BlockBase {
         }
     }
 
+
+
     private static void processBlacksmith(EntityPlayer player) {
         ItemStack ingredientStack = player.getHeldItem(EnumHand.OFF_HAND);
         Item ToolItem = player.getHeldItem(EnumHand.MAIN_HAND).getItem();
@@ -159,6 +178,8 @@ public class BlockWorkTable extends BlockBase {
         {
         }
     }
+
+
 
     private static void processGoldsmith(EntityPlayer player) {
         ItemStack ingredientStack = player.getHeldItem(EnumHand.OFF_HAND);

@@ -31,23 +31,31 @@ public class ModItems {
     public static ItemBase animalFat = new ItemBase("animal_fat");
 
     //Items for butcher
-    public static ItemModFood chickenDrumstick = new ItemModFood("chicken_drumstick", 2, 0.3f, true, hunger15s, 0.4f);
-    public static ItemModFood chickenDrumstickCooked = new ItemModFood("chicken_drumstick_cooked", 4, 5.2f, true);
-    public static ItemModFood chickenWing = new ItemModFood("chicken_wing", 1, 0.2f, true, hunger15s, 0.4f);
-    public static ItemModFood chickenWingCooked = new ItemModFood("chicken_wing_cooked", 3, 5.0f, true);
-    public static ItemModFood chickenBreast = new ItemModFood("chicken_breast", 2, 0.4f, true, hunger15s, 0.4f);
-    public static ItemModFood chickenBreastCooked = new ItemModFood("chicken_breast_cooked", 5, 6.0f, true);
+    public static ItemModFood chickenDrumstick = new ItemModFood("chicken_drumstick", 2, 0.3f, true, hunger15s, 0.5f);
+    public static ItemModFood chickenWing = new ItemModFood("chicken_wing", 1, 0.2f, true, hunger15s, 0.5f);
+    public static ItemModFood chickenBreast = new ItemModFood("chicken_breast", 2, 0.4f, true, hunger15s, 0.5f);
     public static ItemModFood beefMince = new ItemModFood("beef_mince", 3, 0.4f, true, hunger15s, 0.4f);
     public static ItemModFood lambMince = new ItemModFood("lamb_mince", 3, 0.4f, true, hunger15s, 0.4f);
     public static ItemModFood porkMince = new ItemModFood("pork_mince", 3, 0.4f, true, hunger15s, 0.4f);
+    public static ItemModFood horseSteak = new ItemModFood("horse_steak", 3, 1.8f, true, hunger15s, 0.4f);
+    public static ItemModFood tongue = new ItemModFood("tongue", 2, 0.2f, true, hunger15s, 0.4f);
     public static ItemLevelableTool butchersKnife = new ItemLevelableTool("butchers_knife");
 
     //Items for Baker
     public static ItemLevelableTool bakingUtensils = new ItemLevelableTool("baking_utensils");
+    public static ItemLevelableTool grindStone = new ItemLevelableTool("grind_stone");
     public static ItemBase flourWheat = new ItemBase("flour_wheat");
+    public static ItemBase flourRice = new ItemBase("flour_rice");
+    public static ItemBase riceRaw = new ItemBase("rice_raw");
     public static ItemBase dough = new ItemBase("dough");
     public static ItemModFood stewBeef = new ItemModFood("stew_beef",8,13.0f ,false);
     public static ItemModFood pancakes = new ItemModFood("pancakes",4,2.0f ,false);
+    public static ItemModFood chickenDrumstickCooked = new ItemModFood("chicken_drumstick_cooked", 4, 5.2f, true);
+    public static ItemModFood chickenWingCooked = new ItemModFood("chicken_wing_cooked", 3, 5.0f, true);
+    public static ItemModFood chickenBreastCooked = new ItemModFood("chicken_breast_cooked", 5, 6.0f, true);
+    public static ItemModFood riceCooked = new ItemModFood("rice_cooked", 5, 7.0f, false);
+    public static ItemModFood horseSteakCooked = new ItemModFood("horse_steak_cooked", 7, 12.0f, true);
+    public static ItemModFood tongueCooked = new ItemModFood("tongue_cooked", 4, 4.8f, true);
 
     //Items for clockmaker
     public static ItemLevelableTool clockmakersTools = new ItemLevelableTool("clockmakers_tools");
@@ -82,12 +90,14 @@ public class ModItems {
 
             //Items for Butcher
             butchersKnife,
-            chickenBreast, chickenBreastCooked, chickenDrumstick, chickenDrumstickCooked, chickenWing, chickenWingCooked,
+            chickenBreast, chickenDrumstick, chickenWing,
             beefMince, lambMince, porkMince,
+            horseSteak, tongue,
 
             //Items for Baker
-            bakingUtensils,
-            flourWheat, stewBeef, pancakes, dough,
+            bakingUtensils, grindStone,
+            flourWheat, stewBeef, pancakes, dough, riceRaw, flourRice, riceCooked, chickenBreastCooked, chickenWingCooked,
+            chickenDrumstickCooked, horseSteakCooked, tongueCooked,
 
             //Items for Clockmaker
             clockmakersTools,
@@ -129,21 +139,30 @@ public class ModItems {
         //Items for Butcher
         butchersKnife.registerItemModel();
         chickenBreast.registerItemModel();
-        chickenBreastCooked.registerItemModel();
         chickenDrumstick.registerItemModel();
-        chickenDrumstickCooked.registerItemModel();
         chickenWing.registerItemModel();
-        chickenWingCooked.registerItemModel();
         beefMince.registerItemModel();
         lambMince.registerItemModel();
         porkMince.registerItemModel();
+        horseSteak.registerItemModel();
+        tongue.registerItemModel();
 
         //Items for Baker
         bakingUtensils.registerItemModel();
+        grindStone.registerItemModel();
         flourWheat.registerItemModel();
         stewBeef.registerItemModel();
         pancakes.registerItemModel();
         dough.registerItemModel();
+        riceRaw.registerItemModel();
+        riceCooked.registerItemModel();
+        flourRice.registerItemModel();
+        chickenBreastCooked.registerItemModel();
+        chickenDrumstickCooked.registerItemModel();
+        chickenWingCooked.registerItemModel();
+        horseSteakCooked.registerItemModel();
+        tongueCooked.registerItemModel();
+
 
         //Items for clockmaker
         clockmakersTools.registerItemModel();
