@@ -1,5 +1,6 @@
 package gd.rf.acro.walledkingdoms.Citizens;
 
+import gd.rf.acro.walledkingdoms.Politics.Politics;
 import gd.rf.acro.walledkingdoms.Utils;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,6 +12,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.village.MerchantRecipe;
+import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 import org.apache.commons.lang3.RandomUtils;
@@ -32,8 +35,9 @@ public class Citizens {
         {
             if(villagers.get(0).getHeldItem(EnumHand.MAIN_HAND).getItem()== Items.AIR) //allows for building specific professions
             {
-                giveProfessionItem(villagers.get(0),0,true);
+                int profession = giveProfessionItem(villagers.get(0),0,true);
                 setCitizenHouse(villagers.get(0),pos,kingdomNo,mirror);
+                genMerchantRecipes(villagers.get(0),profession,kingdomNo);
             }
         }
     }
@@ -186,5 +190,36 @@ public class Citizens {
         return "vagrant"; //this should never be returned
     }
 
+    public static void genMerchantRecipes(EntityCitizenPassive entity, int profession, int kingdomNo)
+    {
+        MerchantRecipeList list = new MerchantRecipeList();
+        switch (profession)
+        {
+            case 0: //butcher
+
+                break;
+            case 1: //baker
+                list.add(new MerchantRecipe(Politics.getPriceWithTax(1,kingdomNo,false),new ItemStack(Items.BREAD,2)));
+                list.add(new MerchantRecipe(Politics.getPriceWithTax(5,kingdomNo,false),new ItemStack(Items.CAKE,1)));
+
+                break;
+            case 2: //blacksmith
+
+                break;
+            case 3: //goldsmith
+
+                break;
+            case 4: //builder
+
+                break;
+            case 5: //clockmaker
+
+                break;
+            default: //court appointment
+
+                break;
+        }
+        entity.setRecipes(list);
+    }
 
 }

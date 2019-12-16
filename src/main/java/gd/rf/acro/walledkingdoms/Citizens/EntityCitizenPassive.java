@@ -10,6 +10,9 @@ import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.monster.EntityPigZombie;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -19,6 +22,8 @@ import net.minecraft.util.Mirror;
 import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.village.MerchantRecipe;
+import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.fml.relauncher.Side;
@@ -30,7 +35,7 @@ import java.util.List;
 import static gd.rf.acro.walledkingdoms.Politics.Politics.genName;
 import static gd.rf.acro.walledkingdoms.Utils.readLines;
 
-public class EntityCitizenPassive extends EntityMob {
+public class EntityCitizenPassive extends EntityVillager {
     private static final DataParameter<Boolean> ARMS_RAISED = EntityDataManager.createKey(EntityCitizenPassive.class, DataSerializers.BOOLEAN);
 
     public EntityCitizenPassive(World world) {
@@ -82,9 +87,10 @@ public class EntityCitizenPassive extends EntityMob {
     }
 
     @Override
-    protected boolean processInteract(EntityPlayer player, EnumHand hand) {
+    public boolean processInteract(EntityPlayer player, EnumHand hand) {
         if (!this.hasCustomName()) {
             this.setCustomNameTag(genName(5));
+
         }
         if (!this.world.isRemote && hand.equals(EnumHand.MAIN_HAND)) {
             player.sendMessage(new TextComponentString("<" + this.getCustomNameTag() + "> " + "Hello " + player.getName() + "!"));

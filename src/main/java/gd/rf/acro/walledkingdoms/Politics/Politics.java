@@ -1,16 +1,21 @@
 package gd.rf.acro.walledkingdoms.Politics;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDesert;
 import net.minecraft.world.biome.BiomePlains;
 import net.minecraft.world.biome.BiomeSavanna;
 import net.minecraft.world.biome.BiomeSnow;
+import net.minecraftforge.common.DimensionManager;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import static gd.rf.acro.walledkingdoms.Utils.readLines;
 
 public class Politics {
     public static final String[] types = {"Republic of","Kingdom of","Federation of","Demarchy of"};
@@ -107,6 +112,21 @@ public class Politics {
 
         }
         return name;
+    }
+
+    public static ItemStack getPriceWithTax(int emeralds,int kingdomNo,boolean isHighValue)
+    {
+        String pref = DimensionManager.getCurrentSaveRootDirectory() + "/WalledKingdoms/"+kingdomNo+"/";
+        List<String> politics = readLines(pref+"politics.wk");
+        if(isHighValue)
+        {
+            return new ItemStack(Items.EMERALD,(emeralds+(RandomUtils.nextInt(0,11)-5)+Integer.parseInt(politics.get(16))));
+            //base amount +- Sellers margins + VAT
+        }
+        else
+        {
+            return new ItemStack(Items.EMERALD,(emeralds+RandomUtils.nextInt(0,5)+Integer.parseInt(politics.get(15))));
+        }
     }
 
 
