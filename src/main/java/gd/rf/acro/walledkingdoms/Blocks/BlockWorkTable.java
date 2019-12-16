@@ -97,8 +97,8 @@ public class BlockWorkTable extends BlockBase {
 
             if(ingredientStack.getItem().equals(ModItems.carcassHorse))
             {
-                Item[] returnItems = {ModItems.beefMince};
-                int[] returnAmounts = {3};
+                Item[] returnItems = {ModItems.beefMince, ModItems.tongue, ModItems.horseSteak};
+                int[] returnAmounts = {3, 1, 1};
                 directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
             }
 

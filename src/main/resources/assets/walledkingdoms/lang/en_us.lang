@@ -29,14 +29,13 @@ item.carcass_donkey.name=Donkey Carcass
 item.animal_fat.name=Animal Fat
 
 item.chicken_breast.name=Raw Chicken Breast
-item.chicken_breast_cooked.name=Chicken Breast
 item.chicken_drumstick.name=Raw Chicken Drumstick
-item.chicken_drumstick_cooked.name=Chicken Drumstick
 item.chicken_wing.name=Raw Chicken Wing
-item.chicken_wing_cooked.name=Chicken Wing
 item.beef_mince.name=Beef Mince
 item.lamb_mince.name=Lamb Mince
 item.pork_mince.name=Pork Mince
+item.horse_steak.name=Raw Chevaline
+item.tongue.name=Raw Tongue
 
 item.butchers_knife.name=Butcher's Knife
 item.smiths_hammer.name=Blacksmith's Hammer
@@ -51,6 +50,11 @@ item.dough.name=Raw Dough
 item.rice_raw.name=Raw Rice
 item.rice_cooked.name=Rice
 item.flour_rice.name=Rice Flour
+item.chicken_breast_cooked.name=Chicken Breast
+item.chicken_drumstick_cooked.name=Chicken Drumstick
+item.chicken_wing_cooked.name=Chicken Wing
+item.horse_steak_cooked.name=Horse Steak
+item.tongue_cooked.name=Cooked Tongue
 
 item.story.name=Story Book
 
