@@ -13,6 +13,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 public class ModItems {
     //Potion Effect setup for 15 seconds of hunger I
     private static PotionEffect hunger15s = new PotionEffect(MobEffects.HUNGER, 300);
+    private static PotionEffect poison10s = new PotionEffect(MobEffects.POISON, 200);
 
     public static ItemBase mineCharm = new ItemBase("mine_charm");
     public static StoryBook story = new StoryBook("story");
@@ -31,6 +32,7 @@ public class ModItems {
     public static ItemBase animalFat = new ItemBase("animal_fat");
 
     //Items for butcher
+    public static ItemLevelableTool butchersKnife = new ItemLevelableTool("butchers_knife");
     public static ItemModFood chickenDrumstick = new ItemModFood("chicken_drumstick", 2, 0.3f, true, hunger15s, 0.5f);
     public static ItemModFood chickenWing = new ItemModFood("chicken_wing", 1, 0.2f, true, hunger15s, 0.5f);
     public static ItemModFood chickenBreast = new ItemModFood("chicken_breast", 2, 0.4f, true, hunger15s, 0.5f);
@@ -39,11 +41,13 @@ public class ModItems {
     public static ItemModFood porkMince = new ItemModFood("pork_mince", 3, 0.4f, true, hunger15s, 0.4f);
     public static ItemModFood horseSteak = new ItemModFood("horse_steak", 3, 1.8f, true, hunger15s, 0.4f);
     public static ItemModFood tongue = new ItemModFood("tongue", 2, 0.2f, true, hunger15s, 0.4f);
-    public static ItemLevelableTool butchersKnife = new ItemLevelableTool("butchers_knife");
+    public static ItemModFood ham = new ItemModFood("ham", 3, 2.1f, true, hunger15s, 0.4f);
+    public static ItemModFood calamari = new ItemModFood("calamari", 2, 0.4f, false, poison10s, 0.3f);
 
     //Items for Baker
     public static ItemLevelableTool bakingUtensils = new ItemLevelableTool("baking_utensils");
     public static ItemLevelableTool grindStone = new ItemLevelableTool("grind_stone");
+    public static ItemLevelableTool smokingRack = new ItemLevelableTool("smoking_rack");
     public static ItemBase flourWheat = new ItemBase("flour_wheat");
     public static ItemBase flourRice = new ItemBase("flour_rice");
     public static ItemBase riceRaw = new ItemBase("rice_raw");
@@ -56,6 +60,8 @@ public class ModItems {
     public static ItemModFood riceCooked = new ItemModFood("rice_cooked", 5, 7.0f, false);
     public static ItemModFood horseSteakCooked = new ItemModFood("horse_steak_cooked", 7, 12.0f, true);
     public static ItemModFood tongueCooked = new ItemModFood("tongue_cooked", 4, 4.8f, true);
+    public static ItemModFood hamSmoked = new ItemModFood("ham_smoked", 6, 9.0f, false);
+    public static ItemModFood fishSmoked = new ItemModFood("fish_smoked", 5, 4, false);
 
     //Items for clockmaker
     public static ItemLevelableTool clockmakersTools = new ItemLevelableTool("clockmakers_tools");
@@ -92,12 +98,12 @@ public class ModItems {
             butchersKnife,
             chickenBreast, chickenDrumstick, chickenWing,
             beefMince, lambMince, porkMince,
-            horseSteak, tongue,
+            horseSteak, tongue, ham, calamari,
 
             //Items for Baker
-            bakingUtensils, grindStone,
+            bakingUtensils, grindStone, smokingRack,
             flourWheat, stewBeef, pancakes, dough, riceRaw, flourRice, riceCooked, chickenBreastCooked, chickenWingCooked,
-            chickenDrumstickCooked, horseSteakCooked, tongueCooked,
+            chickenDrumstickCooked, horseSteakCooked, tongueCooked, hamSmoked, fishSmoked,
 
             //Items for Clockmaker
             clockmakersTools,
@@ -146,10 +152,13 @@ public class ModItems {
         porkMince.registerItemModel();
         horseSteak.registerItemModel();
         tongue.registerItemModel();
+        ham.registerItemModel();
+        calamari.registerItemModel();
 
         //Items for Baker
         bakingUtensils.registerItemModel();
         grindStone.registerItemModel();
+        smokingRack.registerItemModel();
         flourWheat.registerItemModel();
         stewBeef.registerItemModel();
         pancakes.registerItemModel();
@@ -162,7 +171,8 @@ public class ModItems {
         chickenWingCooked.registerItemModel();
         horseSteakCooked.registerItemModel();
         tongueCooked.registerItemModel();
-
+        hamSmoked.registerItemModel();
+        fishSmoked.registerItemModel();
 
         //Items for clockmaker
         clockmakersTools.registerItemModel();
