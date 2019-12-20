@@ -90,6 +90,7 @@ public class Citizens {
                 Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0);
                 break;
         }
+
         return profession;
     }
     public static void setCitizenHouse(EntityCitizenPassive entity, BlockPos blockPos,int kingdomNumber, boolean mirror)
@@ -199,12 +200,15 @@ public class Citizens {
 
                 break;
             case 1: //baker
-                list.add(new MerchantRecipe(Politics.getPriceWithTax(1,kingdomNo,false),new ItemStack(Items.BREAD,2)));
-                list.add(new MerchantRecipe(Politics.getPriceWithTax(5,kingdomNo,false),new ItemStack(Items.CAKE,1)));
+                list.add(simpleTrade(Items.BREAD,3,1,kingdomNo,false));
+                list.add(simpleTrade(Items.CAKE,1,3,kingdomNo,false));
 
                 break;
             case 2: //blacksmith
-
+                list.add(simpleTrade(Items.IRON_SWORD,1,5,kingdomNo,false));
+                list.add(simpleTrade(Items.IRON_AXE,1,5,kingdomNo,false));
+                list.add(simpleTrade(Items.IRON_HORSE_ARMOR,1,10,kingdomNo,false));
+                list.add(simpleTrade(Items.IRON_PICKAXE,1,5,kingdomNo,false));
                 break;
             case 3: //goldsmith
 
@@ -220,6 +224,11 @@ public class Citizens {
                 break;
         }
         entity.setRecipes(list);
+    }
+
+    public static MerchantRecipe simpleTrade(Item selling, int amount,int baseEmeralds,int kingdomNo, boolean isHighValue)
+    {
+        return new MerchantRecipe(Politics.getPriceWithTax(baseEmeralds,kingdomNo,isHighValue),new ItemStack(selling,amount));
     }
 
 }

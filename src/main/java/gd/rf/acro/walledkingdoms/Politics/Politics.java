@@ -134,7 +134,7 @@ public class Politics {
         if(isHighValue)
         {
             return new ItemStack(Items.EMERALD,(emeralds+(RandomUtils.nextInt(0,11)-5)+Integer.parseInt(politics.get(16))));
-            //base amount +- Sellers margins + VAT
+            //base amount +- Sellers margins + VAT (- social status)
         }
         else
         {
