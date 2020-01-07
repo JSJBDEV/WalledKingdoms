@@ -39,6 +39,21 @@ public class Politics {
         info.add(genName(4)); //kingdom name
         info.add("0"); //cultural style
 
+        boolean isAcceptableBiome = false;
+        int x=0;
+        int z=0;
+        while (!isAcceptableBiome)
+        {
+            x = RandomUtils.nextInt(0,20001)-10000;
+            z = RandomUtils.nextInt(0,20001)-10000;
+            if(world.getBiome(new BlockPos(x,100,z)) instanceof BiomePlains || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeDesert || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeSavanna || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeSnow)
+            {
+                isAcceptableBiome = true;
+            }
+        }
+        info.add(""+x);
+        info.add(""+z);
+
         //actual politics
         info.add(residency[RandomUtils.nextInt(0,residency.length-1)]); //residency type
         info.add(revocable[RandomUtils.nextInt(0,revocable.length-1)]); //is residency revocable
@@ -92,20 +107,7 @@ public class Politics {
 
 
 
-        boolean isAcceptableBiome = false;
-        int x=0;
-        int z=0;
-        while (!isAcceptableBiome)
-        {
-            x = RandomUtils.nextInt(0,20001)-10000;
-            z = RandomUtils.nextInt(0,20001)-10000;
-            if(world.getBiome(new BlockPos(x,100,z)) instanceof BiomePlains || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeDesert || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeSavanna || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeSnow)
-            {
-                isAcceptableBiome = true;
-            }
-        }
-        info.add(""+x);
-        info.add(""+z);
+
 
 
 
