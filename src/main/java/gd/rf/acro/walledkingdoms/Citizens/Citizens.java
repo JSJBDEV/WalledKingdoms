@@ -1,5 +1,6 @@
 package gd.rf.acro.walledkingdoms.Citizens;
 
+import gd.rf.acro.walledkingdoms.Politics.Politics;
 import gd.rf.acro.walledkingdoms.Utils;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,6 +12,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.village.MerchantRecipe;
+import net.minecraft.village.MerchantRecipeList;
 import net.minecraft.world.World;
 import net.minecraftforge.common.DimensionManager;
 import org.apache.commons.lang3.RandomUtils;
@@ -32,8 +35,9 @@ public class Citizens {
         {
             if(villagers.get(0).getHeldItem(EnumHand.MAIN_HAND).getItem()== Items.AIR) //allows for building specific professions
             {
-                giveProfessionItem(villagers.get(0),0,true);
+                int profession = giveProfessionItem(villagers.get(0),0,true);
                 setCitizenHouse(villagers.get(0),pos,kingdomNo,mirror);
+                genMerchantRecipes(villagers.get(0),profession,kingdomNo);
             }
         }
     }
@@ -86,6 +90,7 @@ public class Citizens {
                 Utils.setIntegerNBTList(entity.getHeldItem(EnumHand.MAIN_HAND),"tasks",0);
                 break;
         }
+
         return profession;
     }
     public static void setCitizenHouse(EntityCitizenPassive entity, BlockPos blockPos,int kingdomNumber, boolean mirror)
@@ -186,5 +191,44 @@ public class Citizens {
         return "vagrant"; //this should never be returned
     }
 
+    public static void genMerchantRecipes(EntityCitizenPassive entity, int profession, int kingdomNo)
+    {
+        MerchantRecipeList list = new MerchantRecipeList();
+        switch (profession)
+        {
+            case 0: //butcher
+
+                break;
+            case 1: //baker
+                list.add(simpleTrade(Items.BREAD,3,1,kingdomNo,false));
+                list.add(simpleTrade(Items.CAKE,1,3,kingdomNo,false));
+
+                break;
+            case 2: //blacksmith
+                list.add(simpleTrade(Items.IRON_SWORD,1,5,kingdomNo,false));
+                list.add(simpleTrade(Items.IRON_AXE,1,5,kingdomNo,false));
+                list.add(simpleTrade(Items.IRON_HORSE_ARMOR,1,10,kingdomNo,false));
+                list.add(simpleTrade(Items.IRON_PICKAXE,1,5,kingdomNo,false));
+                break;
+            case 3: //goldsmith
+
+                break;
+            case 4: //builder
+
+                break;
+            case 5: //clockmaker
+
+                break;
+            default: //court appointment
+
+                break;
+        }
+        entity.setRecipes(list);
+    }
+
+    public static MerchantRecipe simpleTrade(Item selling, int amount,int baseEmeralds,int kingdomNo, boolean isHighValue)
+    {
+        return new MerchantRecipe(Politics.getPriceWithTax(baseEmeralds,kingdomNo,isHighValue),new ItemStack(selling,amount));
+    }
 
 }

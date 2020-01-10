@@ -1,16 +1,21 @@
 package gd.rf.acro.walledkingdoms.Politics;
 
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDesert;
 import net.minecraft.world.biome.BiomePlains;
 import net.minecraft.world.biome.BiomeSavanna;
 import net.minecraft.world.biome.BiomeSnow;
+import net.minecraftforge.common.DimensionManager;
 import org.apache.commons.lang3.RandomUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import static gd.rf.acro.walledkingdoms.Utils.readLines;
 
 public class Politics {
     public static final String[] types = {"Republic of","Kingdom of","Federation of","Demarchy of"};
@@ -22,6 +27,7 @@ public class Politics {
     public static final String[] land = {"application","government","auction"};
     public static final String[] gates = {"Open","Closed","Mercantile"};
     public static final String[] guards = {"lax","reasonable","thorough"};
+    public static final String[] punishments = {"confiscation","banishment","revocation","enemy"};
     public static List<String> genImportantInformation(World world)
     {
         List<String> info = new ArrayList<>();
@@ -32,6 +38,21 @@ public class Politics {
 
         info.add(genName(4)); //kingdom name
         info.add("0"); //cultural style
+
+        boolean isAcceptableBiome = false;
+        int x=0;
+        int z=0;
+        while (!isAcceptableBiome)
+        {
+            x = RandomUtils.nextInt(0,20001)-10000;
+            z = RandomUtils.nextInt(0,20001)-10000;
+            if(world.getBiome(new BlockPos(x,100,z)) instanceof BiomePlains || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeDesert || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeSavanna || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeSnow)
+            {
+                isAcceptableBiome = true;
+            }
+        }
+        info.add(""+x);
+        info.add(""+z);
 
         //actual politics
         info.add(residency[RandomUtils.nextInt(0,residency.length-1)]); //residency type
@@ -49,6 +70,12 @@ public class Politics {
         info.add(""+RandomUtils.nextInt(0,64)); //residency tax
         info.add(""+RandomUtils.nextInt(0,101)); //low value tax as a %
         info.add(""+RandomUtils.nextInt(0,101)); //high value tax as a %
+
+        info.add(punishments[RandomUtils.nextInt(0,punishments.length-1)]); //no-permit
+        info.add(punishments[RandomUtils.nextInt(0,punishments.length-1)]); //vandalism
+        info.add(punishments[RandomUtils.nextInt(0,punishments.length-1)]); //assault
+        info.add(punishments[RandomUtils.nextInt(0,punishments.length-1)]); //murder
+        info.add(punishments[RandomUtils.nextInt(0,punishments.length-1)]); //theft
 
         /*
           0 - type of country
@@ -69,25 +96,18 @@ public class Politics {
           14 - residency tax
           15 - low value tax
           16 - high value tax
+
+          17 - crime: no permit
+          18 - crime: vandalism
+          19 - crime: assault
+          20 - crime: murder
+          21 - crime: theft
          */
 
 
 
 
-        boolean isAcceptableBiome = false;
-        int x=0;
-        int z=0;
-        while (!isAcceptableBiome)
-        {
-            x = RandomUtils.nextInt(0,20001)-10000;
-            z = RandomUtils.nextInt(0,20001)-10000;
-            if(world.getBiome(new BlockPos(x,100,z)) instanceof BiomePlains || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeDesert || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeSavanna || world.getBiome(new BlockPos(x,100,z)) instanceof BiomeSnow)
-            {
-                isAcceptableBiome = true;
-            }
-        }
-        info.add(""+x);
-        info.add(""+z);
+
 
 
 
@@ -107,6 +127,21 @@ public class Politics {
 
         }
         return name;
+    }
+
+    public static ItemStack getPriceWithTax(int emeralds,int kingdomNo,boolean isHighValue)
+    {
+        String pref = DimensionManager.getCurrentSaveRootDirectory() + "/WalledKingdoms/"+kingdomNo+"/";
+        List<String> politics = readLines(pref+"politics.wk");
+        if(isHighValue)
+        {
+            return new ItemStack(Items.EMERALD,(emeralds+(RandomUtils.nextInt(0,11)-5)+Integer.parseInt(politics.get(16))));
+            //base amount +- Sellers margins + VAT (- social status)
+        }
+        else
+        {
+            return new ItemStack(Items.EMERALD,(emeralds+RandomUtils.nextInt(0,5)+Integer.parseInt(politics.get(15))));
+        }
     }
 
 

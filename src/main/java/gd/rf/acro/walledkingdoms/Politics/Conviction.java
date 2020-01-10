@@ -18,6 +18,38 @@ public class Conviction {
         List<String> politics = readLines(pref+"politics.wk");
         //when a player is convicted they are assigned a scoreboard value in WK_response that tells the command handler
         //what the player is allowed to type, with this, the string crime can be assumed to always be valid
+        switch (crime)
+        {
+            case "no-permit":
+                applyPunishment(player,politics.get(17));
+                break;
+            case "vandalism":
+                applyPunishment(player,politics.get(18));
+                break;
+            case "assault":
+                applyPunishment(player,politics.get(19));
+                break;
+            case "murder":
+                applyPunishment(player,politics.get(20));
+                break;
+            case "theft":
+                applyPunishment(player,politics.get(21));
+                break;
+        }
+    }
 
+    private static void applyPunishment(EntityPlayer player, String punishment)
+    {
+        switch (punishment)
+        {
+            case "confiscation":
+                break;
+            case "banishment":
+                break;
+            case "revocation":
+                break;
+            case "enemy":
+                break;
+        }
     }
 }
