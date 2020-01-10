@@ -39,6 +39,8 @@ public class WalledKingdoms
         ModEntities.init();
         ModEntities.initModels();
 
+        ModBlocks.init();
+        ModItems.init();
     }
     @Mod.Instance
     public static WalledKingdoms instance;
@@ -51,6 +53,8 @@ public class WalledKingdoms
     {
         // some example code
         logger.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        logger.info("Garlic crop >> {}", ModBlocks.cropGarlic.getRegistryName());
+        logger.info("Garlic >> {}", ModItems.garlic.getRegistryName());
 
         // TickEvents are on the FML bus:
         FMLCommonHandler.instance().bus().register(new gd.rf.acro.walledkingdoms.Items.ItemTrinketTick());
@@ -61,23 +65,22 @@ public class WalledKingdoms
     @Mod.EventBusSubscriber
     public static class RegistrationHandler {
         @SubscribeEvent
+        public static void registerBlocks(RegistryEvent.Register<Block> event) {
+            ModBlocks.register(event.getRegistry());
+        }
+
+        @SubscribeEvent
         public static void registerItems(RegistryEvent.Register<Item> event) {
             ModItems.register(event.getRegistry());
             //Recipes.init();
             ModBlocks.registerItemBlocks(event.getRegistry());
         }
-        @SubscribeEvent
-        public static void registerBlocks(RegistryEvent.Register<Block> event) {
-            ModBlocks.register(event.getRegistry());
 
-        }
 
         @SubscribeEvent
-        public static void registerItems(ModelRegistryEvent event) {
+        public static void registerModels(ModelRegistryEvent event) {
             ModItems.registerModels();
             ModBlocks.registerModels();
-
-
         }
 
 

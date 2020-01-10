@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "walledkingdoms:onion"
+        },
+        {
+            "item": "minecraft:carrot"
+        },
+        {
+            "item": "minecraft:potato"
+        },
+        {
+            "item": "walledkingdoms:garlic"
+        },
+        {
+            "item": "walledkingdoms:beef_mince"
+        },
+        {
+            "item": "walledkingdoms:animal_fat"
+        },
+        {
+            "item": "minecraft:water_bucket"
+        }
+    ],
+    "result": {
+        "item": "walledkingdoms:stew_beef",
+        "count": 2
+    }
+}

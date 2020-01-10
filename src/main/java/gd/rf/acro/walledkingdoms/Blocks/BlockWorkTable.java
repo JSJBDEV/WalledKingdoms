@@ -97,8 +97,8 @@ public class BlockWorkTable extends BlockBase {
 
             if(ingredientStack.getItem().equals(ModItems.carcassHorse))
             {
-                Item[] returnItems = {ModItems.beefMince};
-                int[] returnAmounts = {3};
+                Item[] returnItems = {ModItems.beefMince, ModItems.tongue, ModItems.horseSteak};
+                int[] returnAmounts = {3, 1, 1};
                 directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
             }
 
@@ -155,6 +155,17 @@ public class BlockWorkTable extends BlockBase {
                 directRecipe(returnItems, returnAmounts, player, ingredientStack, 1);
             }
         }
+        if(ToolItem.equals(ModItems.smokingRack))
+        {
+            if(ingredientStack.getItem().equals(ModItems.ham))
+            {
+                directRecipe(ModItems.hamSmoked, 1, player, ingredientStack, 1);
+            }
+            if(ingredientStack.getItem().equals(Items.FISH))
+            {
+                directRecipe(ModItems.fishSmoked, 1, player, ingredientStack, 1);
+            }
+        }
     }
 
 
@@ -176,6 +187,10 @@ public class BlockWorkTable extends BlockBase {
 
         if(ToolItem.equals(ModItems.smithsHammer))
         {
+            if(ingredientStack.getItem().equals(Item.getItemFromBlock(Blocks.IRON_BARS)))
+            {
+                directRecipe(ModItems.smokingRack, 1, player, ingredientStack, 1);
+            }
         }
     }
 
