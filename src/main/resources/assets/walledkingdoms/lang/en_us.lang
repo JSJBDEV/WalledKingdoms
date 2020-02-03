@@ -70,6 +70,10 @@ item.city_steel_pickaxe.name=City Steel Pick
 item.city_steel_axe.name=City Steel Axe
 item.city_steel_shovel.name=City Steel Shovel
 item.city_steel_hoe.name=City Steel Hoe
+item.city_steel_helmet.name=City Steel Helmet
+item.city_steel_chestplate.name=City Steel Chestplate
+item.city_steel_leggings.name=City Steel Greaves
+item.city_steel_boots.name=City Steel Boots
 
 item.story.name=Story Book
 

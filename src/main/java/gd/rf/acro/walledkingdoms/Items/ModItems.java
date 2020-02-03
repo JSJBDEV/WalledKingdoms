@@ -5,6 +5,7 @@ import gd.rf.acro.walledkingdoms.Items.tool.*;
 import gd.rf.acro.walledkingdoms.WalledKingdoms;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.potion.PotionEffect;
@@ -81,6 +82,10 @@ public class ModItems {
     public static ItemAxe citySteelAxe = new ItemAxe(WalledKingdoms.citySteelToolMaterial, "city_steel_axe");
     public static ItemShovel citySteelShovel = new ItemShovel(WalledKingdoms.citySteelToolMaterial, "city_steel_shovel");
     public static ItemHoe citySteelHoe = new ItemHoe(WalledKingdoms.citySteelToolMaterial, "city_steel_hoe");
+    public static ItemArmour citySteelHelmet = new ItemArmour(WalledKingdoms.citySteelArmourMaterial, EntityEquipmentSlot.HEAD, "city_steel_helmet");
+    public static ItemArmour citySteelChestplate = new ItemArmour(WalledKingdoms.citySteelArmourMaterial, EntityEquipmentSlot.CHEST, "city_steel_chestplate");
+    public static ItemArmour citySteelLeggings = new ItemArmour(WalledKingdoms.citySteelArmourMaterial, EntityEquipmentSlot.LEGS, "city_steel_leggings");
+    public static ItemArmour citySteelBoots = new ItemArmour(WalledKingdoms.citySteelArmourMaterial, EntityEquipmentSlot.FEET, "city_steel_boots");
 
     //Items for goldsmith/silversmith
     public static ItemBase ringGold = new ItemBase("ring_gold");
@@ -133,6 +138,7 @@ public class ModItems {
             //Items for Blacksmith
             smithsHammer,
             citySteelSword, citySteelPickaxe, citySteelAxe, citySteelShovel, citySteelHoe,
+            citySteelHelmet, citySteelChestplate, citySteelLeggings, citySteelBoots,
 
             //Vanity items for goldsmith/silversmith
             goldsmith,
@@ -212,6 +218,10 @@ public class ModItems {
         citySteelAxe.registerItemModel();
         citySteelShovel.registerItemModel();
         citySteelHoe.registerItemModel();
+        citySteelHelmet.registerItemModel();
+        citySteelChestplate.registerItemModel();
+        citySteelLeggings.registerItemModel();
+        citySteelBoots.registerItemModel();
 
         //Items for goldsmith/silversmith
         goldsmith.registerItemModel();

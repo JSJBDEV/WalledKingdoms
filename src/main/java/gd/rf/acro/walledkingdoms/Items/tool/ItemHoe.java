@@ -10,6 +10,7 @@ public class ItemHoe extends net.minecraft.item.ItemHoe {
         setRegistryName(name);
         setUnlocalizedName(name);
         this.name = name;
+        setCreativeTab(WalledKingdoms.tab);
     }
 
     public void registerItemModel() {

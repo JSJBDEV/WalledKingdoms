@@ -7,7 +7,9 @@ import gd.rf.acro.walledkingdoms.Items.ModRecipes;
 import gd.rf.acro.walledkingdoms.proxy.CommonProxy;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.EnumHelper;
@@ -86,4 +88,5 @@ public class WalledKingdoms
     }
 
     public static final Item.ToolMaterial citySteelToolMaterial = EnumHelper.addToolMaterial("CITY_STEEL", 2, 260, 7.0F, 2.5F, 14);
+    public static final ItemArmor.ArmorMaterial citySteelArmourMaterial = EnumHelper.addArmorMaterial("CITY_STEEL", "walledkingdoms:city_steel", 15, new int[]{3, 6, 8, 3}, 8, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0f);
 }

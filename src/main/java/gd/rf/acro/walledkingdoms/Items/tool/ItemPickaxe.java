@@ -10,6 +10,7 @@ public class ItemPickaxe extends net.minecraft.item.ItemPickaxe {
         setRegistryName(name);
         setUnlocalizedName(name);
         this.name = name;
+        setCreativeTab(WalledKingdoms.tab);
     }
 
     public void registerItemModel() {

@@ -1,12 +1,14 @@
-package gd.rf.acro.walledkingdoms.Items.tool;
+package gd.rf.acro.walledkingdoms.Items;
 
 import gd.rf.acro.walledkingdoms.WalledKingdoms;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemArmor;
 
-public class ItemAxe extends net.minecraft.item.ItemAxe {
+public class ItemArmour extends ItemArmor {
     private String name;
 
-    public ItemAxe(ToolMaterial material, String name) {
-        super(material, 8f, -3.1f);
+    public ItemArmour(ArmorMaterial material, EntityEquipmentSlot slot, String name) {
+        super(material, 0, slot);
         setRegistryName(name);
         setUnlocalizedName(name);
         this.name = name;

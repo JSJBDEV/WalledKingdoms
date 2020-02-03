@@ -11,6 +11,7 @@ public class ItemShovel extends ItemSpade {
         setRegistryName(name);
         setUnlocalizedName(name);
         this.name = name;
+        setCreativeTab(WalledKingdoms.tab);
     }
 
     public void registerItemModel() {
