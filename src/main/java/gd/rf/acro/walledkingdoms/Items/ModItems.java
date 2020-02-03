@@ -1,6 +1,7 @@
 package gd.rf.acro.walledkingdoms.Items;
 
 import gd.rf.acro.walledkingdoms.Blocks.ModBlocks;
+import gd.rf.acro.walledkingdoms.Items.tool.*;
 import gd.rf.acro.walledkingdoms.WalledKingdoms;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
@@ -75,6 +76,11 @@ public class ModItems {
 
     //Items for Blacksmith
     public static ItemLevelableTool smithsHammer = new ItemLevelableTool("smiths_hammer");
+    public static ItemSword citySteelSword = new ItemSword(WalledKingdoms.citySteelToolMaterial, "city_steel_sword");
+    public static ItemPickaxe citySteelPickaxe = new ItemPickaxe(WalledKingdoms.citySteelToolMaterial, "city_steel_pickaxe");
+    public static ItemAxe citySteelAxe = new ItemAxe(WalledKingdoms.citySteelToolMaterial, "city_steel_axe");
+    public static ItemShovel citySteelShovel = new ItemShovel(WalledKingdoms.citySteelToolMaterial, "city_steel_shovel");
+    public static ItemHoe citySteelHoe = new ItemHoe(WalledKingdoms.citySteelToolMaterial, "city_steel_hoe");
 
     //Items for goldsmith/silversmith
     public static ItemBase ringGold = new ItemBase("ring_gold");
@@ -126,6 +132,7 @@ public class ModItems {
 
             //Items for Blacksmith
             smithsHammer,
+            citySteelSword, citySteelPickaxe, citySteelAxe, citySteelShovel, citySteelHoe,
 
             //Vanity items for goldsmith/silversmith
             goldsmith,
@@ -200,6 +207,11 @@ public class ModItems {
 
         //Items for blacksmith
         smithsHammer.registerItemModel();
+        citySteelSword.registerItemModel();
+        citySteelPickaxe.registerItemModel();
+        citySteelAxe.registerItemModel();
+        citySteelShovel.registerItemModel();
+        citySteelHoe.registerItemModel();
 
         //Items for goldsmith/silversmith
         goldsmith.registerItemModel();

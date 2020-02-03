@@ -65,6 +65,12 @@ item.tongue_cooked.name=Cooked Tongue
 item.ham_smoked.name=Smoked Ham
 item.fish_smoked.name=Smoked Fish
 
+item.city_steel_sword.name=City Steel Sword
+item.city_steel_pickaxe.name=City Steel Pick
+item.city_steel_axe.name=City Steel Axe
+item.city_steel_shovel.name=City Steel Shovel
+item.city_steel_hoe.name=City Steel Hoe
+
 item.story.name=Story Book
 
 itemGroup.walledkingdoms=Walled Kingdoms

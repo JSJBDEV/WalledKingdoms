@@ -10,6 +10,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
@@ -82,8 +83,7 @@ public class WalledKingdoms
             ModItems.registerModels();
             ModBlocks.registerModels();
         }
-
-
-
     }
+
+    public static final Item.ToolMaterial citySteelToolMaterial = EnumHelper.addToolMaterial("CITY_STEEL", 2, 260, 7.0F, 2.5F, 14);
 }
