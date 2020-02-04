@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "walledkingdoms:lamb_mince"
+        },
+        {
+            "item": "walledkingdoms:lamb_mince"
+        },
+        {
+            "item": "walledkingdoms:animal_fat"
+        }
+    ],
+    "result": {
+        "item": "walledkingdoms:sausage_raw",
+        "count": 3
+    }
+}

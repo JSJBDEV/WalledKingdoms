@@ -51,6 +51,7 @@ public class ModItems {
     public static ItemModFood tongue = new ItemModFood("tongue", 2, 0.2f, true, hunger15s, 0.4f);
     public static ItemModFood ham = new ItemModFood("ham", 3, 2.1f, true, hunger15s, 0.4f);
     public static ItemModFood calamari = new ItemModFood("calamari", 2, 0.4f, false, poison10s, 0.3f);
+    public static ItemModFood sausageRaw = new ItemModFood("sausage_raw", 3, 0.4f, true, hunger15s, 0.4f);
 
     //Items for Baker
     public static ItemLevelableTool bakingUtensils = new ItemLevelableTool("baking_utensils");
@@ -71,6 +72,7 @@ public class ModItems {
     public static ItemModFood tongueCooked = new ItemModFood("tongue_cooked", 4, 4.8f, true);
     public static ItemModFood hamSmoked = new ItemModFood("ham_smoked", 6, 9.0f, false);
     public static ItemModFood fishSmoked = new ItemModFood("fish_smoked", 5, 4, false);
+    public static ItemModFood sausageCooked = new ItemModFood("sausage_cooked", 5, 4, true);
 
     //Items for clockmaker
     public static ItemLevelableTool clockmakersTools = new ItemLevelableTool("clockmakers_tools");
@@ -124,13 +126,13 @@ public class ModItems {
             butchersKnife,
             chickenBreast, chickenDrumstick, chickenWing,
             beefMince, lambMince, porkMince,
-            horseSteak, tongue, ham, calamari,
+            horseSteak, tongue, ham, calamari, sausageRaw,
 
             //Items for Baker
             bakingUtensils, grindStone, smokingRack,
             flourWheat, stewBeef, stewPork, pancakes, dough, riceRaw, flourRice, riceCooked,
             chickenBreastCooked, chickenWingCooked, chickenDrumstickCooked,
-            horseSteakCooked, tongueCooked, hamSmoked, fishSmoked,
+            horseSteakCooked, tongueCooked, hamSmoked, fishSmoked, sausageCooked,
 
             //Items for Clockmaker
             clockmakersTools,
@@ -207,6 +209,7 @@ public class ModItems {
         tongueCooked.registerItemModel();
         hamSmoked.registerItemModel();
         fishSmoked.registerItemModel();
+        sausageCooked.registerItemModel();
 
         //Items for clockmaker
         clockmakersTools.registerItemModel();
