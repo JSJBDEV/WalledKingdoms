@@ -1,9 +1,11 @@
 package gd.rf.acro.walledkingdoms.Items;
 
 import gd.rf.acro.walledkingdoms.Blocks.ModBlocks;
+import gd.rf.acro.walledkingdoms.Items.tool.*;
 import gd.rf.acro.walledkingdoms.WalledKingdoms;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.potion.PotionEffect;
@@ -49,6 +51,7 @@ public class ModItems {
     public static ItemModFood tongue = new ItemModFood("tongue", 2, 0.2f, true, hunger15s, 0.4f);
     public static ItemModFood ham = new ItemModFood("ham", 3, 2.1f, true, hunger15s, 0.4f);
     public static ItemModFood calamari = new ItemModFood("calamari", 2, 0.4f, false, poison10s, 0.3f);
+    public static ItemModFood sausageRaw = new ItemModFood("sausage_raw", 3, 0.4f, true, hunger15s, 0.4f);
 
     //Items for Baker
     public static ItemLevelableTool bakingUtensils = new ItemLevelableTool("baking_utensils");
@@ -69,12 +72,22 @@ public class ModItems {
     public static ItemModFood tongueCooked = new ItemModFood("tongue_cooked", 4, 4.8f, true);
     public static ItemModFood hamSmoked = new ItemModFood("ham_smoked", 6, 9.0f, false);
     public static ItemModFood fishSmoked = new ItemModFood("fish_smoked", 5, 4, false);
+    public static ItemModFood sausageCooked = new ItemModFood("sausage_cooked", 5, 4, true);
 
     //Items for clockmaker
     public static ItemLevelableTool clockmakersTools = new ItemLevelableTool("clockmakers_tools");
 
     //Items for Blacksmith
     public static ItemLevelableTool smithsHammer = new ItemLevelableTool("smiths_hammer");
+    public static ItemSword citySteelSword = new ItemSword(WalledKingdoms.citySteelToolMaterial, "city_steel_sword");
+    public static ItemPickaxe citySteelPickaxe = new ItemPickaxe(WalledKingdoms.citySteelToolMaterial, "city_steel_pickaxe");
+    public static ItemAxe citySteelAxe = new ItemAxe(WalledKingdoms.citySteelToolMaterial, "city_steel_axe");
+    public static ItemShovel citySteelShovel = new ItemShovel(WalledKingdoms.citySteelToolMaterial, "city_steel_shovel");
+    public static ItemHoe citySteelHoe = new ItemHoe(WalledKingdoms.citySteelToolMaterial, "city_steel_hoe");
+    public static ItemArmour citySteelHelmet = new ItemArmour(WalledKingdoms.citySteelArmourMaterial, EntityEquipmentSlot.HEAD, "city_steel_helmet");
+    public static ItemArmour citySteelChestplate = new ItemArmour(WalledKingdoms.citySteelArmourMaterial, EntityEquipmentSlot.CHEST, "city_steel_chestplate");
+    public static ItemArmour citySteelLeggings = new ItemArmour(WalledKingdoms.citySteelArmourMaterial, EntityEquipmentSlot.LEGS, "city_steel_leggings");
+    public static ItemArmour citySteelBoots = new ItemArmour(WalledKingdoms.citySteelArmourMaterial, EntityEquipmentSlot.FEET, "city_steel_boots");
 
     //Items for goldsmith/silversmith
     public static ItemBase ringGold = new ItemBase("ring_gold");
@@ -113,19 +126,21 @@ public class ModItems {
             butchersKnife,
             chickenBreast, chickenDrumstick, chickenWing,
             beefMince, lambMince, porkMince,
-            horseSteak, tongue, ham, calamari,
+            horseSteak, tongue, ham, calamari, sausageRaw,
 
             //Items for Baker
             bakingUtensils, grindStone, smokingRack,
             flourWheat, stewBeef, stewPork, pancakes, dough, riceRaw, flourRice, riceCooked,
             chickenBreastCooked, chickenWingCooked, chickenDrumstickCooked,
-            horseSteakCooked, tongueCooked, hamSmoked, fishSmoked,
+            horseSteakCooked, tongueCooked, hamSmoked, fishSmoked, sausageCooked,
 
             //Items for Clockmaker
             clockmakersTools,
 
             //Items for Blacksmith
             smithsHammer,
+            citySteelSword, citySteelPickaxe, citySteelAxe, citySteelShovel, citySteelHoe,
+            citySteelHelmet, citySteelChestplate, citySteelLeggings, citySteelBoots,
 
             //Vanity items for goldsmith/silversmith
             goldsmith,
@@ -194,12 +209,22 @@ public class ModItems {
         tongueCooked.registerItemModel();
         hamSmoked.registerItemModel();
         fishSmoked.registerItemModel();
+        sausageCooked.registerItemModel();
 
         //Items for clockmaker
         clockmakersTools.registerItemModel();
 
         //Items for blacksmith
         smithsHammer.registerItemModel();
+        citySteelSword.registerItemModel();
+        citySteelPickaxe.registerItemModel();
+        citySteelAxe.registerItemModel();
+        citySteelShovel.registerItemModel();
+        citySteelHoe.registerItemModel();
+        citySteelHelmet.registerItemModel();
+        citySteelChestplate.registerItemModel();
+        citySteelLeggings.registerItemModel();
+        citySteelBoots.registerItemModel();
 
         //Items for goldsmith/silversmith
         goldsmith.registerItemModel();

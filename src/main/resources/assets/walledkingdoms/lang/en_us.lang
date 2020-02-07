@@ -41,6 +41,7 @@ item.horse_steak.name=Raw Chevaline
 item.tongue.name=Raw Tongue
 item.ham.name=Raw Ham
 item.calamari.name=Raw Calamari
+item.sausage_raw.name=Raw Sausage
 
 item.butchers_knife.name=Butcher's Knife
 item.smiths_hammer.name=Blacksmith's Hammer
@@ -64,6 +65,17 @@ item.horse_steak_cooked.name=Horse Steak
 item.tongue_cooked.name=Cooked Tongue
 item.ham_smoked.name=Smoked Ham
 item.fish_smoked.name=Smoked Fish
+item.sausage_cooked.name=Sausage
+
+item.city_steel_sword.name=City Steel Sword
+item.city_steel_pickaxe.name=City Steel Pick
+item.city_steel_axe.name=City Steel Axe
+item.city_steel_shovel.name=City Steel Shovel
+item.city_steel_hoe.name=City Steel Hoe
+item.city_steel_helmet.name=City Steel Helmet
+item.city_steel_chestplate.name=City Steel Chestplate
+item.city_steel_leggings.name=City Steel Greaves
+item.city_steel_boots.name=City Steel Boots
 
 item.story.name=Story Book
 
