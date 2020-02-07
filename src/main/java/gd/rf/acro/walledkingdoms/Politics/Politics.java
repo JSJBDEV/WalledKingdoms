@@ -82,26 +82,29 @@ public class Politics {
           1 - country name
           2 - cultural style
 
-          3 - residency type
-          4 - revocable residency
-          5 - stay without residency
-          6 - high value goods
-          7 - low value goods
-          8 - trade routes
-          9 - embargoed routes
-          10 - auction style
-          11 - land assignment style
-          12 - gate state
-          13 - guard style
-          14 - residency tax
-          15 - low value tax
-          16 - high value tax
+          3 - city x
+          4 - city z
 
-          17 - crime: no permit
-          18 - crime: vandalism
-          19 - crime: assault
-          20 - crime: murder
-          21 - crime: theft
+          5 - residency type
+          6 - revocable residency
+          7 - stay without residency
+          8 - high value goods
+          9 - low value goods
+          10 - trade routes
+          11 - embargoed routes
+          12 - auction style
+          13 - land assignment style
+          14 - gate state
+          15 - guard style
+          16 - residency tax
+          17 - low value tax
+          18 - high value tax
+
+          19 - crime: no permit
+          20 - crime: vandalism
+          21 - crime: assault
+          22 - crime: murder
+          23 - crime: theft
          */
 
 
@@ -135,12 +138,12 @@ public class Politics {
         List<String> politics = readLines(pref+"politics.wk");
         if(isHighValue)
         {
-            return new ItemStack(Items.EMERALD,(emeralds+(RandomUtils.nextInt(0,11)-5)+Integer.parseInt(politics.get(16))));
+            return new ItemStack(Items.EMERALD,(emeralds+(RandomUtils.nextInt(0,11)-5)+Integer.parseInt(politics.get(18))));
             //base amount +- Sellers margins + VAT (- social status)
         }
         else
         {
-            return new ItemStack(Items.EMERALD,(emeralds+RandomUtils.nextInt(0,5)+Integer.parseInt(politics.get(15))));
+            return new ItemStack(Items.EMERALD,(emeralds+RandomUtils.nextInt(0,5)+Integer.parseInt(politics.get(17))));
         }
     }
 

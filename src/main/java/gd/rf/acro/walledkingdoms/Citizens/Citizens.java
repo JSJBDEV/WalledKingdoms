@@ -211,16 +211,16 @@ public class Citizens {
                 list.add(simpleTrade(Items.IRON_PICKAXE,1,5,kingdomNo,false));
                 break;
             case 3: //goldsmith
-
+                list.add(simpleTrade(Items.GOLD_INGOT,1,5,kingdomNo,false));
                 break;
             case 4: //builder
-
+                list.add(simpleTrade(Item.getItemFromBlock(Blocks.STONEBRICK),1,5,kingdomNo,true));
                 break;
             case 5: //clockmaker
-
+                list.add(simpleTrade(Items.CLOCK,1,10,kingdomNo,true));
                 break;
             default: //court appointment
-
+                list.add(simpleTrade(Items.STRING,1,10,kingdomNo,false));
                 break;
         }
         entity.setRecipes(list);
