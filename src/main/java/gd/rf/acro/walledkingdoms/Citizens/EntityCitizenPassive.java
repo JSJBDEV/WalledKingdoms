@@ -143,7 +143,7 @@ public class EntityCitizenPassive extends EntityVillager {
     private void maintainCurrentHouse() {
         NBTTagCompound tags = this.getHeldItem(EnumHand.MAIN_HAND).getTagCompound();
         String house = Citizens.getHouseTypeFromCurrentCoords((int) this.posX, (int) this.posZ, tags.getInteger("kingno"));
-        BlockPos exact = Citizens.getExactHouseCoords((int) this.posX, tags.getInteger("homey")+5, (int) this.posZ, tags.getInteger("kingno"));
+        BlockPos exact = Citizens.getExactHouseCoords((int) this.posX, tags.getInteger("homey"), (int) this.posZ, tags.getInteger("kingno"));
         if (house.substring(0, 1).equals("+")) {
             house = house.substring(1);
             Utils.loadStructure(exact, this.world, house, Mirror.LEFT_RIGHT, Rotation.CLOCKWISE_90, true);
