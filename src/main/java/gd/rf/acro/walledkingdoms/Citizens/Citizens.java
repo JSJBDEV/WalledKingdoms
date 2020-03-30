@@ -37,7 +37,7 @@ public class Citizens {
             {
                 int profession = giveProfessionItem(villagers.get(0),0,true);
                 setCitizenHouse(villagers.get(0),pos,kingdomNo,mirror);
-                genMerchantRecipes(villagers.get(0),profession,kingdomNo);
+                villagers.get(0).setRecipes(genMerchantRecipes(villagers.get(0),profession,kingdomNo));
             }
         }
     }
@@ -191,7 +191,7 @@ public class Citizens {
         return "vagrant"; //this should never be returned
     }
 
-    public static void genMerchantRecipes(EntityCitizenPassive entity, int profession, int kingdomNo)
+    public static MerchantRecipeList genMerchantRecipes(EntityCitizenPassive entity, int profession, int kingdomNo)
     {
         MerchantRecipeList list = new MerchantRecipeList();
         switch (profession)
@@ -224,6 +224,7 @@ public class Citizens {
                 break;
         }
         entity.setRecipes(list);
+        return list;
     }
 
     public static MerchantRecipe simpleTrade(Item selling, int amount,int baseEmeralds,int kingdomNo, boolean isHighValue)
